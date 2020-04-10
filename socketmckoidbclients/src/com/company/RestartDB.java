@@ -1,9 +1,6 @@
 package com.company;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class RestartDB {
@@ -39,6 +36,69 @@ public class RestartDB {
         }
 
 
-        //
+        //Drop all of the tables as needed
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet result;
+
+            // Drop All Tables
+                try {
+                    statement.executeQuery("DROP TABLE Crew");
+                    statement.executeQuery("DROP TABLE Post");
+                    statement.executeQuery("DROP TABLE Rank");
+                    statement.executeQuery("DROP TABLE Job"); //Job is giving issues
+                    statement.executeQuery("DROP TABLE Ranking");
+
+                }catch(SQLException e){}
+
+
+            //Create Crew Table
+            statement.executeQuery(
+                    "CREATE TABLE Crew " +
+                            "(id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER)"
+            );
+
+            System.out.println("Crew Table has been created");
+
+
+            //Create Post Table
+            statement.executeQuery(
+                    "CREATE TABLE Post " +
+                            "(id INTEGER PRIMARY KEY, title VARCHAR(50))"
+            );
+
+            System.out.println("Post Table has been created");
+
+
+            //Create Job Table
+            //This table is to link Crew with Post
+            statement.executeQuery(
+                    "CREATE TABLE Job " +
+                            "(cid INTEGER, pid INTEGER)");
+
+            System.out.println("Job Table has been created");
+
+            //Create Rank Table
+            statement.executeQuery(
+                    "CREATE TABLE Rank " +
+                            "(id INTEGER PRIMARY KEY, title VARCHAR(25))"
+            );
+
+            System.out.println(("Rank Table has been created"));
+
+            //Create Job Table
+            //This table is to link Crew with Post
+            statement.executeQuery(
+                    "CREATE TABLE Ranking " +
+                            "(cid INTEGER PRIMARY KEY, rid INTEGER)");
+
+            System.out.println("Ranking Table has been created");
+
+            System.out.println("\nSchema has been generated");
+
+
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
 }

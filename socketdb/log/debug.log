@@ -1478,3 +1478,1519 @@ Was expecting one of:
   Couldn't change to 'BedrockU.conf' schema.
 > com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
   Couldn't change to 'BedrockU.conf' schema.
+**** Debug log started: Fri Apr 10 10:18:13 CDT 2020 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: gnu.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+[ TIME: Fri Apr 10 10:18:13 CDT 2020 ]
+% java.io.IOException: Conglomerate already exists: DefaultDatabase
+	at com.mckoi.database.TableDataConglomerate.minimalCreate(TableDataConglomerate.java:1014)
+	at com.mckoi.database.TableDataConglomerate.create(TableDataConglomerate.java:1055)
+	at com.mckoi.database.Database.create(Database.java:1696)
+	at com.mckoi.database.control.DBController.createDatabase(DBController.java:96)
+	at com.mckoi.runtime.McKoiDBMain.doCreate(McKoiDBMain.java:114)
+	at com.mckoi.runtime.McKoiDBMain.main(McKoiDBMain.java:287)
+**** Debug log started: Fri Apr 10 10:18:30 CDT 2020 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: gnu.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: /Users/armandez/Documents/UL CMPS Curriculum/CMPS 460/SpockBot_460/socketdb/./data/DefaultDatabase.lock
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 061APP_Student
+% Dropped: 062APP_Address
+% Dropped: 063APP_Enrolled
+% Dropped: 064APP_Course
+% Dropped: 065APP_Major
+[ TIME: Fri Apr 10 10:18:50 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "desc" at line 1, column 44.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "check" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "unique" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    "foreign" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnOrConstraintDefinition(SQL.java:2359)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2324)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Student ]
+
+]
+[ TIME: Fri Apr 10 10:19:29 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Student' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 10:19:29 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Student ]
+
+]
+[ TIME: Fri Apr 10 10:21:16 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Student' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 066APP_Crew
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Post ]
+
+]
+[ TIME: Fri Apr 10 10:21:46 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Post' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Apr 10 10:21:46 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "desc" at line 1, column 44.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "check" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "unique" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    "foreign" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnOrConstraintDefinition(SQL.java:2359)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2324)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 072APP_Crew
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Post ]
+
+]
+[ TIME: Fri Apr 10 10:23:52 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Post' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Apr 10 10:23:52 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "desc" at line 1, column 44.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "check" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "unique" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    "foreign" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnOrConstraintDefinition(SQL.java:2359)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2324)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 073APP_Crew
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Post ]
+
+]
+[ TIME: Fri Apr 10 10:26:14 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Post' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Apr 10 10:26:14 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "desc" at line 1, column 44.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "check" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "unique" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    "foreign" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnOrConstraintDefinition(SQL.java:2359)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2324)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 074APP_Crew
+% Dropped: 075APP_Post
+% Dropped: 076APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Rank ]
+
+]
+[ TIME: Fri Apr 10 10:27:41 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Rank' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 077APP_Crew
+% Dropped: 078APP_Post
+% Dropped: 079APP_Job
+% Dropped: 080APP_Rank
+[ TIME: Fri Apr 10 10:33:50 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "cid" at line 1, column 57.
+Was expecting:
+    "(" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableConstraintDefinition(SQL.java:2916)
+	at com.mckoi.database.sql.SQL.ColumnOrConstraintDefinition(SQL.java:2354)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2324)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 081APP_Crew
+% Dropped: 082APP_Post
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 10:34:10 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 067APP_Student
+% Dropped: 068APP_Address
+% Dropped: 069APP_Enrolled
+% Dropped: 070APP_Course
+% Dropped: 071APP_Major
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:14:33 CDT 2020 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Constraint violation (_ANONYMOUS_CONSTRAINT_4) dropping table APP.Crew because of referential link from APP.Job
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:113)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:14:33 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:15:05 CDT 2020 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Constraint violation (_ANONYMOUS_CONSTRAINT_4) dropping table APP.Crew because of referential link from APP.Job
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:113)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:15:05 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:16:03 CDT 2020 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Constraint violation (_ANONYMOUS_CONSTRAINT_4) dropping table APP.Crew because of referential link from APP.Job
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:113)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:16:03 CDT 2020 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Constraint violation (_ANONYMOUS_CONSTRAINT_4) dropping table APP.Crew because of referential link from APP.Job
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:113)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 085APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:17:27 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:17:27 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:21:16 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "D" at line 1, column 17.
+Was expecting one of:
+    "drop" ...
+    "alter" ...
+    "add" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1598)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:21:16 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:24:20 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:24:20 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:24:37 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+% Dropped: 083APP_Crew
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Post (id INTEGER PRIMARY KEY, title VARCHAR(50)) ]
+
+]
+[ TIME: Fri Apr 10 11:24:37 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Post' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:25:16 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:25:57 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:27:48 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:27:48 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:28:14 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:28:14 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:28:14 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:28:33 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+% Dropped: 092APP_Crew
+% Dropped: 084APP_Post
+% Dropped: 086APP_Rank
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:28:33 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER, FOREIGN KEY (cid) REFERENCES Crew(id), FOREIGN KEY (rid) REFERENCES Rank(id)) ]
+
+]
+[ TIME: Fri Apr 10 11:28:33 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+[ TIME: Fri Apr 10 11:29:47 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "FOREIGN" at line 1, column 22.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "column" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    "constraint" ...
+    "primary" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1592)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+% Dropped: 095APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:29:47 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:29:47 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:32:23 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Crew (id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:32:23 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 093APP_Crew
+% Dropped: 094APP_Post
+% Dropped: 096APP_Rank
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:32:39 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:32:39 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 099APP_Job
+% Dropped: 097APP_Crew
+% Dropped: 098APP_Post
+% Dropped: 100APP_Rank
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:33:12 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:33:12 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 103APP_Job
+% Dropped: 101APP_Crew
+% Dropped: 102APP_Post
+% Dropped: 104APP_Rank
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:34:58 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:34:58 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 105APP_Crew
+% Dropped: 106APP_Post
+% Dropped: 108APP_Rank
+% Dropped: 107APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:36:44 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:36:44 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 109APP_Crew
+% Dropped: 110APP_Post
+% Dropped: 112APP_Rank
+% Dropped: 111APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:38:31 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ CREATE TABLE Job (cid INTEGER, rid INTEGER) ]
+
+]
+[ TIME: Fri Apr 10 11:38:31 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Fri Apr 10 11:39:54 CDT 2020 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: gnu.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+[ TIME: Fri Apr 10 11:39:54 CDT 2020 ]
+% java.io.IOException: Conglomerate already exists: DefaultDatabase
+	at com.mckoi.database.TableDataConglomerate.minimalCreate(TableDataConglomerate.java:1014)
+	at com.mckoi.database.TableDataConglomerate.create(TableDataConglomerate.java:1055)
+	at com.mckoi.database.Database.create(Database.java:1696)
+	at com.mckoi.database.control.DBController.createDatabase(DBController.java:96)
+	at com.mckoi.runtime.McKoiDBMain.doCreate(McKoiDBMain.java:114)
+	at com.mckoi.runtime.McKoiDBMain.main(McKoiDBMain.java:287)
+**** Debug log started: Fri Apr 10 11:40:06 CDT 2020 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: gnu.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 113APP_Crew
+% Dropped: 114APP_Post
+% Dropped: 116APP_Rank
+% Dropped: 115APP_Job
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Ranking ]
+
+]
+[ TIME: Fri Apr 10 11:41:19 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Ranking' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Job ]
+
+]
+[ TIME: Fri Apr 10 11:41:19 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Job' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:42:23 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 117APP_Crew
+% Dropped: 118APP_Post
+% Dropped: 120APP_Rank
+% Dropped: 119APP_Job
+% Dropped: 121APP_Ranking
+[ TIME: Fri Apr 10 11:49:32 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "AUTO_INCREMENT" at line 1, column 43.
+Was expecting one of:
+    "null" ...
+    "unique" ...
+    "primary" ...
+    "index_none" ...
+    "index_blist" ...
+    "not" ...
+    ")" ...
+    "," ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2326)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:50:48 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Apr 10 11:50:48 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "AUTO_INCREMENT" at line 1, column 31.
+Was expecting one of:
+    "null" ...
+    "unique" ...
+    "default" ...
+    "primary" ...
+    "index_none" ...
+    "index_blist" ...
+    "not" ...
+    "(" ...
+    ")" ...
+    "," ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2326)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ DROP TABLE Crew ]
+
+]
+[ TIME: Fri Apr 10 11:51:59 CDT 2020 ]
+% com.mckoi.database.DatabaseException: Table 'APP.Crew' does not exist.
+	at com.mckoi.database.interpret.DropTable.evaluate(DropTable.java:92)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Apr 10 11:51:59 CDT 2020 ]
+% com.mckoi.database.sql.ParseException: Encountered "AUTO_INCREMENT" at line 1, column 40.
+Was expecting one of:
+    "null" ...
+    "unique" ...
+    "primary" ...
+    "index_none" ...
+    "index_blist" ...
+    "not" ...
+    ")" ...
+    "," ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2326)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.Create(SQL.java:238)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:174)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
