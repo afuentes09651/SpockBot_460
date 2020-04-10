@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Add {
 
-    static ResultSet result = Main.result;
-    static Connection connection = Main.connection;
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
@@ -15,7 +13,7 @@ public class Add {
     public static void main() throws SQLException {
 
         System.out.print("\n\nPlease choose what you would like to add to the Database:" +
-                "\n1. Officer" +
+                "\n1. Crew Member" +
                 "\n2. Assignment" +
                 "\n3. Rank (Role)" +
                 "\nEnter choice: ");
@@ -35,9 +33,9 @@ public class Add {
     }
 
 
-    public static void addCrew() throws SQLException {
+    public static void addCrew(){
 
-        System.out.println("\nYou have chosen to recruit a new officer to the USS Corsair!" +
+        System.out.println("\nYou have chosen to recruit a new Crew Member to the USS Corsair!" +
                 " This requires an Crew ID, Name, and Rank ID");
 
         System.out.print("\nPlease enter a unique Crew ID: ");
@@ -54,11 +52,11 @@ public class Add {
 
         //This does not take care of rank. That must be done separately
         try {
-            result = statement.executeQuery("INSERT INTO Crew(id, name) VALUES " +
+            statement.executeQuery("INSERT INTO Crew(id, name) VALUES " +
                     "(" + cid + ", '" + name  + ")"
             );
 
-            System.out.println("Officer " + name + " has been added!");
+            System.out.println("Crew Member " + name + " has been added!");
 
             //double check query
             //This is to add the rank
@@ -71,12 +69,12 @@ public class Add {
             */
         }
         catch(SQLException e){
-            System.out.println("There was an issue adding officer");
+            System.out.println("There was an issue adding Crew Member");
         }
 
     }
 
-    public static void addPost() throws SQLException {
+    public static void addPost(){
 
         System.out.println("\nYou have chosen to add a new Assignment! This requires a Post ID and Title");
 
@@ -88,9 +86,8 @@ public class Add {
         String title = reader.nextLine();
 
 
-        Statement statement = connection.createStatement();
         try {
-            result = statement.executeQuery(
+            statement.executeQuery(
                     "INSERT INTO Post(id, title) VALUES " +
                             "(" + pid + ", '" + title + "')"
             );
@@ -103,7 +100,7 @@ public class Add {
 
     }
 
-    public static void addRank() throws SQLException {
+    public static void addRank(){
 
         System.out.println("\nYou have chosen to add a new Rank! This requires a Rank ID and Title");
 
@@ -115,9 +112,8 @@ public class Add {
         String title = reader.nextLine();
 
 
-        Statement statement = connection.createStatement();
         try {
-            result = statement.executeQuery(
+            statement.executeQuery(
                     "INSERT INTO Rank(id, title) VALUES " +
                             "(" + rid + ", '" + title + "')"
             );

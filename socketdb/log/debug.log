@@ -2994,3 +2994,10 @@ Was expecting one of:
 	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
 	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$1.run(MultiThreadedConnectionPoolServer.java:171)
 	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
+% Dropped: 087APP_Student
+% Dropped: 088APP_Address
+% Dropped: 089APP_Enrolled
+% Dropped: 090APP_Course
+% Dropped: 091APP_Major

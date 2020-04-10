@@ -58,13 +58,15 @@ public class Main {
 
         int choice = 0;
 
-        while(choice != 5){ //loop for logic
+        while(choice != 7){ //loop for logic
             System.out.print("\nYou have the option to:\n" +
                     "1. List all...\n" +
                     "2. Crew Info\n" +
-                    "3. Add a...\n" +
-                    "4. Assign Crew\n" +
-                    "5. Exit\n\n" +
+                    "3. Add\n" +
+                    "4. Drop\n" +
+                    "5. Update Rank\n" +
+                    "6. Assign Crew\n" +
+                    "7. Exit\n\n" +
                     "Select an option: ");
             choice = reader.nextInt();
 
@@ -89,8 +91,15 @@ public class Main {
                 enroll.main();
                 break;
             case 5:
+
+            case 6:
+                break;
+            case 7:
                 System.out.println("\n\nThank you for choosing Spockbot! Live Long and Prosper!");
-            default: return;
+                break;
+            default:
+                System.out.println("\nInvalid Request. Please choose again.");
+                break;
         }
 
     }

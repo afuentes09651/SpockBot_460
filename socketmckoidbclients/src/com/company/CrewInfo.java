@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class CrewInfo {
 
     static ResultSet result = Main.result;
-    static Connection connection = Main.connection;
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
