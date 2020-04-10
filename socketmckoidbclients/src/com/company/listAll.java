@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class listAll {
 
     static ResultSet result = Main.result;
-    static Connection connection = Main.connection;
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 

@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eecb7-4cb4-4450-867a-4150ef1aad2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Delete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/000SYS_INFO_sUSRSequenceInfo.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/000SYS_INFO_sUSRSequenceInfo.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/002SYS_INFO_sUSRPKeyInfo.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/002SYS_INFO_sUSRPKeyInfo.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/006SYS_INFO_sUSRPrimaryColumns.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/006SYS_INFO_sUSRPrimaryColumns.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/014SYS_INFO_sUSRGrant.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/014SYS_INFO_sUSRGrant.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/087APP_Student.koi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/088APP_Address.koi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/089APP_Enrolled.koi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/090APP_Course.koi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/091APP_Major.koi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/DefaultDatabase_sf.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/DefaultDatabase_sf.koi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/UpRank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/RestartDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/RestartDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/StudentInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CrewInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CrewInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Delete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Delete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Enroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Enlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/listAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/listAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +152,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="279" y="123" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1440.900@0.0.1440.900" timestamp="1586532491079" />
+    <state x="342" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586555772737">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="342" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1586555772737" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1586555005252">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -12,7 +12,9 @@ public class Main {
     static listAll la;
     static CrewInfo cinfo;
     static Add add;
-    static Enroll enroll;
+    static Enlist enlist;
+    static UpRank upRank;
+
 
     public Main() {
 
@@ -51,7 +53,7 @@ public class Main {
         la = new listAll();
         cinfo = new CrewInfo();
         add = new Add();
-        enroll = new Enroll();
+        enlist = new Enlist();
 
 
 
@@ -64,8 +66,8 @@ public class Main {
                     "2. Crew Info\n" +
                     "3. Add\n" +
                     "4. Drop\n" +
-                    "5. Update Rank\n" +
-                    "6. Assign Crew\n" +
+                    "5. Enlist\n" +
+                    "6. Update Rank\n" +
                     "7. Exit\n\n" +
                     "Select an option: ");
             choice = reader.nextInt();
@@ -88,10 +90,10 @@ public class Main {
                 add.main();
                 break;
             case 4:
-                enroll.main();
+                enlist.main();
                 break;
             case 5:
-
+                enlist.main();
             case 6:
                 break;
             case 7:
