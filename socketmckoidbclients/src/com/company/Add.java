@@ -4,60 +4,71 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Add {
-    
+
     static ResultSet result = Main.result;
     static Connection connection = Main.connection;
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
-    public Add() throws SQLException {}
+    public Add(){}
 
     public static void main() throws SQLException {
 
         System.out.print("\n\nPlease choose what you would like to add to the Database:" +
-                "\n1. Student" +
-                "\n2. Course" +
-                "\n3. Major" +
+                "\n1. Officer" +
+                "\n2. Assignment" +
+                "\n3. Rank" +
                 "\nEnter choice: ");
 
         switch(reader.nextInt()){
             case 1:
-                addStudent();
+                addCrew();
                 break;
             case 2:
-                addCourse();
+                addPost();
                 break;
             case 3:
-                addMajor();
+                addRank();
                 break;
         }
 
     }
 
 
-    public static void addStudent() throws SQLException {
+    public static void addCrew() throws SQLException {
 
-        System.out.println("\nYou have chosen to add a new student! This requires an ID, Name, and Major ID");
+        System.out.println("\nYou have chosen to recruit a new officer to the USS Corsar!" +
+                " This requires an Crew ID, Name, and Rank ID");
 
         System.out.print("\nPlease enter a unique Student ID: ");
-        int id = reader.nextInt();
+        int cid = reader.nextInt();
         reader.nextLine();
 
         System.out.print("\nEnter Student Name: ");
         String name = reader.nextLine();
 
 
-        System.out.print("\nEnter an exisiting Major ID: ");
-        int mid = reader.nextInt();
+        System.out.print("\nEnter an existing Major ID: ");
+        int rid = reader.nextInt();
 
 
+        //This does not take care of rank. That must be done separately
         Statement statement = connection.createStatement();
         try {
-            result = statement.executeQuery("INSERT INTO Student(id, name, majorId) VALUES " +
-                    "(" + id + ", '" + name + "', " + mid + ")"
+            result = statement.executeQuery("INSERT INTO Crew(id, name) VALUES " +
+                    "(" + cid + ", '" + name  + ")"
             );
 
-            System.out.println("Student " + name + " has been added!");
+            System.out.println("Officer " + name + " has been added!");
+
+            //double check query
+            //This is to add the rank
+            result = statement.executeQuery("INSERT INTO Ranking(cid, rid) VALUES " +
+                    "(" + cid + ", " + rid + ")"
+            );
+
+            //get title name to print out
+            result = statement.executeQuery("SELECT title FROM Rank WHERE id = " + rid);
         }
         catch(SQLException e){
             System.out.println("There was an issue adding student");
@@ -65,7 +76,7 @@ public class Add {
 
     }
 
-    public static void addCourse() throws SQLException {
+    public static void addPost() throws SQLException {
 
         System.out.println("\nYou have chosen to add a new course! This requires a Course ID and Course Description");
 
@@ -92,7 +103,7 @@ public class Add {
 
     }
 
-    public static void addMajor() throws SQLException {
+    public static void addRank() throws SQLException {
 
         System.out.println("\nYou have chosen to add a new major! This requires a Major ID and Major Description");
 

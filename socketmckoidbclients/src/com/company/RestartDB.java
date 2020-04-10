@@ -55,7 +55,7 @@ public class RestartDB {
             //Create Crew Table
             statement.executeQuery(
                     "CREATE TABLE Crew " +
-                            "(id INTEGER PRIMARY KEY, name VARCHAR(25), rid INTEGER)"
+                            "(id INTEGER PRIMARY KEY, name VARCHAR(25))"
             );
 
             System.out.println("Crew Table has been created");
@@ -86,8 +86,8 @@ public class RestartDB {
 
             System.out.println(("Rank Table has been created"));
 
-            //Create Job Table
-            //This table is to link Crew with Post
+            //Create Ranking Table
+            //This table is to link Crew with Rank
             statement.executeQuery(
                     "CREATE TABLE Ranking " +
                             "(cid INTEGER PRIMARY KEY, rid INTEGER)");

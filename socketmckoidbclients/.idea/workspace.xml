@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eecb7-4cb4-4450-867a-4150ef1aad2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/StudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CrewInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CrewInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CrewInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/RestartDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RestartDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/listAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/listAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

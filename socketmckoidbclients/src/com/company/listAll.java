@@ -10,10 +10,7 @@ public class listAll {
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
-    public listAll() throws SQLException{
-
-
-    }
+    public listAll(){}
 
 public static void main() throws SQLException {
 

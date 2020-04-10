@@ -10,8 +10,7 @@ public class CrewInfo {
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
-    public CrewInfo() throws SQLException{
-    }
+    public CrewInfo(){}
 
     //We may require more information than what is provided
     public static void main() throws SQLException{
