@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eecb7-4cb4-4450-867a-4150ef1aad2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/UpRank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Delete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Delete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Enroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Enlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/listAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/listAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Add.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -204,10 +200,11 @@
     </state>
     <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.821@0.23.1440.821" timestamp="1584833090859" />
     <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1584825937246" />
-    <state x="208" y="0" width="1024" height="823" key="SettingsEditor" timestamp="1586529433349">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="264" y="0" width="1024" height="823" key="SettingsEditor" timestamp="1586556379234">
+      <screen x="0" y="0" width="1831" height="1080" />
     </state>
     <state x="208" y="0" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586529433349" />
+    <state x="264" y="0" key="SettingsEditor/0.0.1831.1080@0.0.1831.1080" timestamp="1586556379234" />
     <state x="208" y="23" width="1024" height="823" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1584637554660" />
     <state x="385" y="168" width="670" height="676" key="search.everywhere.popup" timestamp="1584654917202">
       <screen x="0" y="23" width="1440" height="821" />

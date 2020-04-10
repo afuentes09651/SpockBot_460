@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Add {
 
+    static ResultSet result = Main.result;
+    static Connection connection = Main.connection;
     static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
 
@@ -13,7 +15,7 @@ public class Add {
     public static void main() throws SQLException {
 
         System.out.print("\n\nPlease choose what you would like to add to the Database:" +
-                "\n1. Crew Member" +
+                "\n1. Officer" +
                 "\n2. Assignment" +
                 "\n3. Rank (Role)" +
                 "\nEnter choice: ");
@@ -33,9 +35,9 @@ public class Add {
     }
 
 
-    public static void addCrew(){
+    public static void addCrew() throws SQLException {
 
-        System.out.println("\nYou have chosen to recruit a new Crew Member to the USS Corsair!" +
+        System.out.println("\nYou have chosen to recruit a new officer to the USS Corsair!" +
                 " This requires an Crew ID, Name, and Rank ID");
 
         System.out.print("\nPlease enter a unique Crew ID: ");
@@ -45,18 +47,21 @@ public class Add {
         System.out.print("\nEnter Crew Name: ");
         String name = reader.nextLine();
 
+        //replace spaces with underscores
+        //name = name.replaceAll(" ","_");
 
-       // System.out.print("\nEnter an existing Rank ID: ");
+
+        // System.out.print("\nEnter an existing Rank ID: ");
         //int rid = reader.nextInt();
 
 
         //This does not take care of rank. That must be done separately
         try {
-            statement.executeQuery("INSERT INTO Crew(id, name) VALUES " +
-                    "(" + cid + ", '" + name  + ")"
+            result = statement.executeQuery("INSERT INTO Crew (id, name) VALUES " +
+                    "('" + cid + "', '" + name  + "')"
             );
 
-            System.out.println("Crew Member " + name + " has been added!");
+            System.out.println("Officer " + name + " has been added!");
 
             //double check query
             //This is to add the rank
@@ -69,12 +74,14 @@ public class Add {
             */
         }
         catch(SQLException e){
-            System.out.println("There was an issue adding Crew Member");
+            e.printStackTrace();
+
+            System.out.println("There was an issue adding officer");
         }
 
     }
 
-    public static void addPost(){
+    public static void addPost() throws SQLException {
 
         System.out.println("\nYou have chosen to add a new Assignment! This requires a Post ID and Title");
 
@@ -86,8 +93,9 @@ public class Add {
         String title = reader.nextLine();
 
 
+        Statement statement = connection.createStatement();
         try {
-            statement.executeQuery(
+            result = statement.executeQuery(
                     "INSERT INTO Post(id, title) VALUES " +
                             "(" + pid + ", '" + title + "')"
             );
@@ -95,12 +103,13 @@ public class Add {
             System.out.println(title + " has been added!");
         }
         catch(SQLException e){
+            e.printStackTrace();
             System.out.println("There was an issue adding Assignment");
         }
 
     }
 
-    public static void addRank(){
+    public static void addRank() throws SQLException {
 
         System.out.println("\nYou have chosen to add a new Rank! This requires a Rank ID and Title");
 
@@ -108,12 +117,13 @@ public class Add {
         int rid = reader.nextInt();
         reader.nextLine();
 
-        System.out.print("\nEnter Major Description: ");
+        System.out.print("\nEnter rank Description: ");
         String title = reader.nextLine();
 
 
+        Statement statement = connection.createStatement();
         try {
-            statement.executeQuery(
+            result = statement.executeQuery(
                     "INSERT INTO Rank(id, title) VALUES " +
                             "(" + rid + ", '" + title + "')"
             );
@@ -121,6 +131,7 @@ public class Add {
             System.out.println(title + " has been added!");
         }
         catch(SQLException e){
+            e.printStackTrace();
             System.out.println("There was an issue adding rank");
         }
 
