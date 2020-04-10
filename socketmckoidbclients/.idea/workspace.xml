@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eecb7-4cb4-4450-867a-4150ef1aad2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/000SYS_INFO_sUSRSequenceInfo.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/000SYS_INFO_sUSRSequenceInfo.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/002SYS_INFO_sUSRPKeyInfo.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/002SYS_INFO_sUSRPKeyInfo.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/003SYS_INFO_sUSRFKeyInfo.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/003SYS_INFO_sUSRFKeyInfo.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/006SYS_INFO_sUSRPrimaryColumns.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/006SYS_INFO_sUSRPrimaryColumns.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/008SYS_INFO_sUSRForeignColumns.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/008SYS_INFO_sUSRForeignColumns.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/014SYS_INFO_sUSRGrant.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/014SYS_INFO_sUSRGrant.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/061APP_Student.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/087APP_Student.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/062APP_Address.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/088APP_Address.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/063APP_Enrolled.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/089APP_Enrolled.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/064APP_Course.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/090APP_Course.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/065APP_Major.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/091APP_Major.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/DefaultDatabase_sf.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/DefaultDatabase_sf.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/jnl10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/log/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/log/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/RestartDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/RestartDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/listAll.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/RestartDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RestartDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/StudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CrewInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/listAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/listAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,12 +1,3 @@
-// Armando Fuentes
-// C00296127
-// CMPS 360
-// Programming Project : 5-1
-// Program Description: This code reads and writes to BedrockU database
-// Certificate of Authenticity: 
- // certify that the changes and additions to the code of this project are entirely my own work.
-
-
 package com.company;
 import java.sql.*;
 import java.util.Scanner;
@@ -19,7 +10,7 @@ public class Main {
     static Scanner reader = new Scanner(System.in);
     static Statement statement;
     static listAll la;
-    static StudentInfo sinfo;
+    static CrewInfo cinfo;
     static Add add;
     static Enroll enroll;
 
@@ -52,13 +43,13 @@ public class Main {
             return;
         }
 
-        System.out.println("Welcome to Project 5!\n");
+        System.out.println("Welcome to Spockbot: USS Corsair DBMS!\n");
 
 
 
         //initializing all my classes
         la = new listAll();
-        sinfo = new StudentInfo();
+        cinfo = new CrewInfo();
         add = new Add();
         enroll = new Enroll();
 
@@ -89,7 +80,7 @@ public class Main {
                 la.main();
                 break;
             case 2:
-                sinfo.main();
+                cinfo.main();
                 break;
             case 3:
                 add.main();
@@ -98,7 +89,7 @@ public class Main {
                 enroll.main();
                 break;
             case 5:
-                System.out.println("\n\nThank you for choosing Project 5! Have a Java Day :)");
+                System.out.println("\n\nThank you for choosing Spockbot! Live Long and Prosper!");
             default: return;
         }
 

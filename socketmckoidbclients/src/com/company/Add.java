@@ -4,36 +4,13 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Add {
+    
+    static ResultSet result = Main.result;
+    static Connection connection = Main.connection;
+    static Scanner reader = Main.reader;
+    static Statement statement = Main.statement;
 
-    static ResultSet result;
-    static Connection connection;
-    static Scanner reader = new Scanner(System.in);
-
-    public Add() throws SQLException {
-
-        try {
-            Class.forName("com.mckoi.JDBCDriver"); //.newInstance();
-        } catch (Exception e) {
-            System.out.println("Cannot register driver: " + e);
-            return;
-        }
-
-        // URL for local database with configuration file
-        String url = "jdbc:mckoi://localhost:9157/BedrockU.conf?create=false";
-
-        // create root user info
-        String admin = "admin";
-        String adminPw = "9999";
-
-        // make a connection to the database
-        try {
-            connection = DriverManager.getConnection(url, admin, adminPw);
-        } catch (SQLException e) {
-            System.out.println("cannot connect to database: " + e);
-            return;
-        }
-
-    }
+    public Add() throws SQLException {}
 
     public static void main() throws SQLException {
 

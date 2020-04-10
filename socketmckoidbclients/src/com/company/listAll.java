@@ -106,15 +106,16 @@ public static void main() throws SQLException {
             reader.nextLine();
             System.out.print("\nEnter major ID: ");
 
-            int major = reader.nextInt();
+            int rank = reader.nextInt();
 
             //Double Check this query please
-            result  = statement.executeQuery(
-                    "SELECT DISTINCT Crew.name FROM Crew, Rank WHERE Crew.id = Rank.cid AND Crew.id =" + major);
+            result = statement.executeQuery("SELECT DISTINCT Crew.name FROM Crew, Rank, Ranking " +
+                    "WHERE Crew.id = Ranking.cid " +
+                    "AND Ranking.rid = " + rank);
 
 
 
-            System.out.println("Crew of Rank ID " + major + ":\n");
+            System.out.println("Crew of Rank ID " + rank + ":\n");
             while(result.next()) {
                 System.out.println(result.getString(1));
             }
