@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD><TITLE>Mckoi SQL Database - Frequently Asked Questions (FAQ)</TITLE>
+<link REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<body marginwidth="6" marginheight="0" leftmargin="6" rightmargin="6" topmargin="0" text="#000000" bgcolor="#FFFFFF" link="#0060A0" vlink="#001060" alink="#B00040">
+<!-- Title Header -->
+
+<table CELLSPACING="5" CELLPADDING="0" WIDTH="100%" >
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td><a href="index.html"><img SRC="mchead3_tc.gif" height="54" width="480" border="0" alt="Mckoi SQL Database"></a></td>
+</tr>
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td>
+<font face="Arial" size="-1"><a href="index.html">Home</a> / <a href="docindex.html">Documentation</a> / <a href="FAQ.html">FAQ</a> / <a href="index.html#Support">Support</a> / <a href="index.html#Download">Download</a></font><br><b><font size="+1" color="#0060A0"> Mckoi SQL Database - Frequently Asked Questions (FAQ)</font></b></td>
+</tr>
+</table>
+
+<!-- End Title Header -->
+<h3> General Questions </h3><blockquote>
+1.1. <a href="#1_1"> What is Mckoi SQL Database? </a><br>
+1.2. <a href="#1_2"> Is Mckoi SQL Database Free? </a><br>
+1.3. <a href="#1_3"> How do I pronounce 'Mckoi'? </a><br>
+1.4. <a href="#1_4"> Is there a mailing list? </a><br>
+1.5. <a href="#1_5"> How do I report a bug? </a><br>
+</blockquote>
+<h3> Java<SUP><FONT SIZE="-2">TM</FONT></SUP> Questions </h3><blockquote>
+2.1. <a href="#2_1"> What versions of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> does Mckoi SQL Database require? </a><br>
+2.2. <a href="#2_2"> Where can I find a version of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> that can run Mckoi SQL Database? </a><br>
+2.3. <a href="#2_3"> What version of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> does the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> driver support? </a><br>
+</blockquote>
+<h3> SQL Questions </h3><blockquote>
+3.1. <a href="#3_1"> What is SQL?  Where can I learn SQL? </a><br>
+3.2. <a href="#3_2"> What level of the SQL standard does Mckoi SQL Database support? </a><br>
+3.3. <a href="#3_3"> Does Mckoi SQL Database support transactions? </a><br>
+</blockquote>
+<h3> General Features Questions </h3><blockquote>
+4.1. <a href="#4_1"> How do I define an AUTO_INCREMENT column that generates unique indentifiers for a table? </a><br>
+4.2. <a href="#4_2"> How do I upgrade a database that I created with an older version? </a><br>
+4.3. <a href="#4_3"> How do I repair a corrupt database? </a><br>
+</blockquote>
+<h3> Database Configuration Questions </h3><blockquote>
+5.1. <a href="#5_1"> How do I change the configuration of my Mckoi SQL Database? </a><br>
+5.2. <a href="#5_2"> How much memory should I give to the internal cache? </a><br>
+</blockquote>
+<h3> JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API Questions </h3><blockquote>
+6.1. <a href="#6_1"> What is the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API? </a><br>
+6.2. <a href="#6_2"> How do I use the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver in my application? </a><br>
+6.3. <a href="#6_3"> How much of the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API is supported? </a><br>
+</blockquote>
+<h3> Database Server Installation Questions </h3><blockquote>
+7.1. <a href="#7_1"> I have installed a Java<SUP><FONT SIZE="-2">TM</FONT></SUP> runtime, how do I start the database server? </a><br>
+7.2. <a href="#7_2"> How do I run the database server as a background process? </a><br>
+7.3. <a href="#7_3"> I'm running Unix.  How do I run Mckoi SQL Database as a daemon that starts automatically when the machine boots? </a><br>
+7.4. <a href="#7_4"> I'm running Windows NT.  How do I run Mckoi SQL Database as a service? </a><br>
+7.5. <a href="#7_5"> How do I shut down the database server? </a><br>
+</blockquote>
+<h3> Stand-alone Questions </h3><blockquote>
+8.1. <a href="#8_1"> How do I embed a stand-alone version of Mckoi SQL Database into my application? </a><br>
+8.2. <a href="#8_2"> Can a single database be accessed as both stand-alone and as
+    a database server?  Can the database data files be shared across different
+    Java<SUP><FONT SIZE="-2">TM</FONT></SUP> VMs in stand-alone embedded mode? </a><br>
+</blockquote>
+<h3> Performance Questions </h3><blockquote>
+9.1. <a href="#9_1"> Why is the first query slower than the second time it is run? </a><br>
+9.2. <a href="#9_2"> The database takes up too much memory.  How do I reduce the memory requirements? </a><br>
+9.3. <a href="#9_3"> Inserting and updating records is really slow.  Can't it go any faster? </a><br>
+</blockquote>
+<hr><h2> General Questions </h2>
+<blockquote><a name="1_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">1.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What is Mckoi SQL Database? </font></td></tr></table><blockquote>
+    <p> Mckoi SQL Database is an SQL (Structured Query Language) Database
+    management system written for the Java<SUP><FONT SIZE="-2">TM</FONT></SUP> platform.  Mckoi SQL Database
+    is optimized to run as a client/server database server for multiple
+    clients, however it can also be embedded in an application as a
+    stand-alone database.  It is highly multi-threaded and features an
+    extendable object-oriented engine.
+    </p>
+    <p> Mckoi SQL Database started as an internal project and has since
+    evolved from its inception in 1998.  The main goals of the project are
+    a code base that is simple to maintain and extend, ease of use and
+    administration, robustness, multiple concurrent access, and performance.
+    </p>
+  </blockquote>
+<a name="1_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">1.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Is Mckoi SQL Database Free? </font></td></tr></table><blockquote>
+    <p> Mckoi SQL Database is released under the GNU General Public License.
+    You may freely use, modify and redistribute the software provided it is
+    under the terms of the GPL license.  The license is available at
+    <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>.  If you wish to use the
+    database under a different license then contact us for further details.
+    </p>
+  </blockquote>
+<a name="1_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">1.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I pronounce 'Mckoi'? </font></td></tr></table><blockquote>
+    <p> Our name is pronounced as in McCoy ("The Real McCoy") or if you prefer
+    the great Star Trek doctor 'Doctor McCoy'.  We actually named the database after
+    our Koi goldfish named Mckoi.
+    </p>
+  </blockquote>
+<a name="1_4"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">1.4.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Is there a mailing list? </font></td></tr></table><blockquote>
+    <p> We have set up a mailing list for general comments, questions and
+    suggestions.  To subscribe to the mailing list send a blank message to
+    <a href="mailto:mckoidb-subscribe@mckoi.com">mckoidb-subscribe@mckoi.com</a>.  A searchable archive of all
+    posts to the list is being managed by a web application backed
+    by a Mckoi SQL database server at <a href="http://mckoi.com/database/mail/list.jsp?list=mckoidb">http://mckoi.com/database/mail/list.jsp?list=mckoidb</a>.
+    </p>
+  </blockquote>
+<a name="1_5"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">1.5.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I report a bug? </font></td></tr></table><blockquote>
+    <p> Bug reports can either be sent to the mailing list or sent personally to
+    the developer at <a href="mailto:toby@mckoi.com">toby@mckoi.com</a>.  If the report 
+    includes attachments that are larger than 50K in size then send it to the developer
+    rather than the list.
+    </p>
+    <p> Bug reports are a great way to contribute to the project.  When submitting a bug
+    report include as much information as you can on the circumstances that caused the
+    error.  It is often useful to include a cut and paste from the 'debug.log' file at
+    the time the error occurred with your bug report.  The fastest way to get a bug fixed
+    is to send a simple Java application or an SQL script that reproduces the error.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> Java<SUP><FONT SIZE="-2">TM</FONT></SUP> Questions </h2>
+<blockquote><a name="2_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">2.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What versions of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> does Mckoi SQL Database require? </font></td></tr></table><blockquote>
+    <p> Mckoi Database server requires the Java<SUP><FONT SIZE="-2">TM</FONT></SUP> 2 platform (runtime version
+    1.2 or above).  It is currently being developed and tested with the Sun JDK
+    version 1.3 Hotspot server running on Windows NT and Linux.
+    </p>
+  </blockquote>
+<a name="2_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">2.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Where can I find a version of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> that can run Mckoi SQL Database? </font></td></tr></table><blockquote>
+    <p> Java<SUP><FONT SIZE="-2">TM</FONT></SUP> runtimes are available from Sun, IBM plus other vendors.  Sun
+    provides Java runtimes for Win32, Solaris and Linux from their website at
+    <a href="http://www.javasoft.com/j2se/">http://www.javasoft.com/j2se/</a>.  IBM also provides various Java runtimes
+    for a number of platforms at <a href="http://www.ibm.com/java/jdk/download/">http://www.ibm.com/java/jdk/download/</a>.
+    </p>
+  </blockquote>
+<a name="2_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">2.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What version of Java<SUP><FONT SIZE="-2">TM</FONT></SUP> does the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> driver support? </font></td></tr></table><blockquote>
+    <p> Mckoi implements version 3 of the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> specification.  JDBC version 3
+    is a part of Java 2 (runtime version 1.4 and greater).  Note that the Mckoi
+    JDBC driver is backwardly compatible with all runtime versions of Java 2.
+    We are considering releasing a cut down version of the Mckoi JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> driver
+    for use with JDBC version 1 which is a part of Java 1.1.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> SQL Questions </h2>
+<blockquote><a name="3_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">3.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What is SQL?  Where can I learn SQL? </font></td></tr></table><blockquote>
+    <p> SQL stands for Structured Query Language.  It has become the standard
+    for manipulating and querying data in a relational database.  SQL is
+    widely taught in higher education CS courses.  There are several books
+    and online tutorials that teach SQL.
+    </p>
+  </blockquote>
+<a name="3_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">3.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What level of the SQL standard does Mckoi SQL Database support? </font></td></tr></table><blockquote>
+    <p> Mckoi SQL Database does not support the full SQL standard.  The entire
+    SQL standard encompasses a huge number of features and goals, some of which do not
+    mesh with the goals of our software.  However, we endeavor to work towards SQL-92
+    entry level support and include all of the most useful features from the newer
+    SQL standards.
+    </p>
+    <p> Having said that, in the first release Mckoi SQL Database supports the
+    SQL standard to a comparable level of other SQL database management systems
+    available.  See the manual for further details on the SQL
+    syntax supported.
+    </p>
+  </blockquote>
+<a name="3_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">3.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Does Mckoi SQL Database support transactions? </font></td></tr></table><blockquote>
+    <p> Mckoi SQL Database fully supports transactions.
+    Mckoi SQL Database supports the stongest isolation level,
+    TRANSACTION_SERIALIZABLE.  See the Transactions section in the documentation
+    for further details.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> General Features Questions </h2>
+<blockquote><a name="4_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">4.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I define an AUTO_INCREMENT column that generates unique indentifiers for a table? </font></td></tr></table><blockquote>
+    <p> Use the <code>UNIQUEKEY(table_name)</code> function.  For example,
+    <pre><font color="#803050">INSERT INTO MyTable ( my_unique_id, my_value )
+    VALUES ( UNIQUEKEY('MyTable'), 'record value' )</font></pre>
+    With a clever use of the <code><font color="#803050">DEFAULT</font></code> clause when creating a table you can
+    make it automatic.  eg.
+    <pre><font color="#803050">CREATE TABLE MyTable
+  ( my_unique_id NUMERIC DEFAULT UNIQUEKEY('MyTable'),
+    my_value LONGVARCHAR(1000) )</font></pre>
+    The <code>UNIQUEKEY</code> function is an atomic operation that will return
+    a set of sequential numbers for a table on a first serve basis.
+    </p>
+  </blockquote>
+<a name="4_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">4.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I upgrade a database that I created with an older version? </font></td></tr></table><blockquote>
+    <p> See the README.txt file in the distribution for instructions on upgrading a
+    database.
+    </p>
+  </blockquote>
+<a name="4_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">4.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I repair a corrupt database? </font></td></tr></table><blockquote>
+    <p> A database may be repaired by using the conglomerate repair tool.  The conglomerate
+    repair tool is used with the following command (from the distribution directory);
+    </p>
+    <code> java -cp mckoidb.jar com.mckoi.tools.DBConglomerateRepairTool -path [path to data files]</code>
+    <p> The repair tool will scan all tables and repair as much as it is able.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> Database Configuration Questions </h2>
+<blockquote><a name="5_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">5.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I change the configuration of my Mckoi SQL Database? </font></td></tr></table><blockquote>
+    <p> Mckoi SQL Database configuration is handled through a single configuration file.
+    The configuration file contains information such as the directory of the data
+    files on the local file system, the amount of memory used by the internal cache
+    plus other tuning and debugging options.
+    </p>
+    <p> There is a default database configuration file provided with the standard
+    distribution.  Go to the directory where you installed the database and edit the
+    file named 'db.conf'.  This file includes detailed comments about each
+    database property. 
+    </p>
+  </blockquote>
+<a name="5_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">5.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How much memory should I give to the internal cache? </font></td></tr></table><blockquote>
+    <p> Providing more memory to the internal cache will improve the performance of
+    most queries however there is no point allocating a large cache for a database
+    that only stores a small amount of data.  I recommend an internal cache size
+    of 4 Megabytes for every 100 Megabytes stored in a database server.  Note
+    that the 4/100 cache rule does not apply in all cases and your cache
+    requirements may vary depending on the nature of the data and your
+    queries.
+    </p>
+    <p> For an embedded database in an application where memory usage needs to be
+    kept at a minimum I recommend a smaller cache size ( 1 Megabyte or smaller ).
+    </p>
+  </blockquote>
+</blockquote>
+<h2> JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API Questions </h2>
+<blockquote><a name="6_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">6.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> What is the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API? </font></td></tr></table><blockquote>
+    <p> JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> is the core Java<SUP><FONT SIZE="-2">TM</FONT></SUP> API that Java applications / applets / servlets use to
+    communicate with a database.  The JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API documentation can be found at
+    <a href="http://java.sun.com/products/jdk/1.2/docs/api/java/sql/package-summary.html">http://java.sun.com/products/jdk/1.2/docs/api/java/sql/package-summary.html</a>.
+    </p>
+    <p> Mckoi SQL Database provides an implementation of the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> version 2 API.
+    Demonstrations of using the Mckoi JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> driver can be found in the tutorials
+    section in the documentation.
+    </p>  
+  </blockquote>
+<a name="6_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">6.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I use the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver in my application? </font></td></tr></table><blockquote>
+    <p> If you are connecting to a remote Mckoi database server you must include the
+    'mkjdbc.jar' jar archive in your application classpath.  For example;
+    </p>
+    <code> java -cp mkjdbc.jar [Your application start class] </code>
+    <p> Your Java application can then register the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver and connect
+    to the database.  If you are embedding the complete Mckoi SQL database engine
+    in to your application then you must include the 'mckoidb.jar' jar archive in 
+    your application classpath.
+    </p>
+    <p> The following code demonstrates a Java application that uses the Mckoi JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP>
+    driver to connect to a remote Mckoi database server.
+    </p>
+    <table border='0' cellpadding='5'><tr><td bgcolor='#F4F4F4'><pre>
+<font color="#2040a0">java</font>.<font color="#2040a0">sql</font>.<font color="#2040a0">Connection</font> <font color="#2040a0">connection</font><font color="4444FF">;</font>
+<strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+  <font color="#444444">// Register the Mckoi JDBC Driver,</font>
+  <font color="#2040a0">Class</font>.<font color="#2040a0">forName</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;com.mckoi.JDBCDriver&quot;</font><font color="4444FF"><strong>)</strong></font>.<font color="#2040a0">newInstance</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+
+  <font color="#444444">// The Database URL specifies the address of the Mckoi</font>
+  <font color="#444444">// database server.  This URL tells the driver to try</font>
+  <font color="#444444">// to make a connection to a database server running</font>
+  <font color="#444444">// on host myhost.mydomain.</font>
+  <font color="#2040a0">String</font> <font color="#2040a0">url</font> <font color="4444FF">=</font> <font color="#008000">&quot;jdbc:mckoi://myhost.mydomain/&quot;</font><font color="4444FF">;</font>
+    
+  <font color="#444444">// Make the connection to the remote host,</font>
+  <font color="#2040a0">connection</font> <font color="4444FF">=</font> <font color="#2040a0">java</font>.<font color="#2040a0">sql</font>.<font color="#2040a0">DriverManager</font>.<font color="#2040a0">getConnection</font><font color="4444FF"><strong>(</strong></font>
+                                   <font color="#2040a0">url</font>, <font color="#2040a0">username</font>, <font color="#2040a0">password</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+       
+<font color="4444FF"><strong>}</strong></font>
+<strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">Exception</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+  <font color="#2040a0">System</font>.<font color="#2040a0">err</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;JDBC Driver initialization failure.&quot;</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+  <font color="#2040a0">e</font>.<font color="#2040a0">printStackTrace</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">System</font>.<font color="#2040a0">err</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+  <strong>return</strong><font color="4444FF">;</font>
+<font color="4444FF"><strong>}</strong></font>
+<font color="#444444">// ... 'connection' is now used to talk with the Database </font></pre></td></tr></table>
+    <p> For further examples, see the tutorials section in the documentation.
+    </p>
+  </blockquote>
+<a name="6_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">6.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How much of the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> API is supported? </font></td></tr></table><blockquote>
+    <p> As of the first release, we support almost all of the features of
+    the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> 2.0 API.  Scrollable ResultSets are supported
+    (insensitive only).  Updateable ResultSets are not supported.  If you feel
+    the driver is lacking an important feature then feel free to email
+    <a href="mailto:toby@mckoi.com">toby@mckoi.com</a> or post a message on our mailing
+    list.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> Database Server Installation Questions </h2>
+<blockquote><a name="7_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">7.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> I have installed a Java<SUP><FONT SIZE="-2">TM</FONT></SUP> runtime, how do I start the database server? </font></td></tr></table><blockquote>
+    <p> First you must create a new database.  Go to the command prompt, change to
+    the directory where you installed the distribution and type;
+    </p>
+    <code> java -jar mckoidb.jar -create [admin username] [admin password] </code>
+    <p> This will create a new database with the configuration options found
+    in the 'db.conf' file in the current directory.  The [admin username] and
+    [admin password] part should be substituted with a name and password that the
+    database admin will use to access the database.  The admin user is given
+    complete control of the database.
+    </p>
+    <p> To start the server after the database has been created, type;
+    </p>
+    <code> java -jar mckoidb.jar </code>
+    <p> Note that some Java<SUP><FONT SIZE="-2">TM</FONT></SUP> virtual machines only permit an application to
+    allocate a maximum of 16 megabytes of memory by default.  This may not be
+    enough for a larger database.  Refer to your Java<SUP><FONT SIZE="-2">TM</FONT></SUP> vendor documentation
+    for details on how to increase this limit.  To increase the memory available
+    in the Sun JVM implementation, use the -Xmx switch.  For example;
+    </p>
+    <code> java -Xmx64m -jar mckoidb.jar </code>
+    <p> This will allow the application to consume a maximum of 64 megabytes of
+    memory.
+    </p>
+  </blockquote>
+<a name="7_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">7.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I run the database server as a background process? </font></td></tr></table><blockquote>
+    <p> This depends on the Operating System you are running.  With the Sun Java<SUP><FONT SIZE="-2">TM</FONT></SUP>
+    runtime on Win32 you can use;
+    </p>
+    <code> javaw -Xmx64m -jar mckoidb.jar </code>
+    <p> On Unix, the standard way of running a process in the background is
+    to append '&' to the end of the command.
+    </p>
+  </blockquote>
+<a name="7_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">7.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> I'm running Unix.  How do I run Mckoi SQL Database as a daemon that starts automatically when the machine boots? </font></td></tr></table><blockquote>
+    <p> Many Unix systems require a database startup script to be added to
+    the /etc/rc.d/init.d/ directory.  Then symlink from one of the rc
+    directories.  Refer to your OS documentation for further details.
+    </p>
+  </blockquote>
+<a name="7_4"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">7.4.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> I'm running Windows NT.  How do I run Mckoi SQL Database as a service? </font></td></tr></table><blockquote>
+    <p> There are several freely available tools on the internet that
+    allow you to set up a Java application as an NT service.  See the
+    following links;
+    <ul><li>JavaServ - <a href="http://www.kcmultimedia.com/javaserv/">http://www.kcmultimedia.com/javaserv/</a></li>
+        <li>JavaService - <a href="http://www.alexandriasc.com/software/JavaService/">http://www.alexandriasc.com/software/JavaService/</a></li>
+        <li>Free JNT - <a href="http://www.eworksmart.com/JNT/">http://www.eworksmart.com/JNT/</a></li>
+        <li>Jsrvany - <a href="http://sourceforge.net/projects/jsrvany/">http://sourceforge.net/projects/jsrvany/</a></li>
+    </ul>
+    </p>
+  </blockquote>
+<a name="7_5"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">7.5.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I shut down the database server? </font></td></tr></table><blockquote>
+    <p> Pressing CTRL-C or killing the Java<SUP><FONT SIZE="-2">TM</FONT></SUP> process while the database is running is
+    a bad idea.  If you do, the database may need to go through a recovery process the
+    next time it is restarted.  It is always best to cleanly shut down the database.
+    Use the following command to shut down a database server running on the local
+    machine;
+    </p>
+    <code> java -jar mckoidb.jar -shutdown [admin username] [admin password] </code>
+    <p> Where [username] and [password] is the admin username and password.  A database
+    server may also be shut down remotely by sending a <code><font color="#803050">SHUTDOWN</font></code> query when
+    the admin user is connected.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> Stand-alone Questions </h2>
+<blockquote><a name="8_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">8.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> How do I embed a stand-alone version of Mckoi SQL Database into my application? </font></td></tr></table><blockquote>
+    <p> You need to include the Mckoi SQL Database jar archive in your application classpath.
+    For example;
+    </p>
+    <code> java -cp mckoidb.jar [Your application start class] </code>
+    <p> <i><b>NOTE</b>: You do not need to include the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver jar-ball (mkjdbc.jar) because the
+    JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver is included in mckoidb.jar</i></p>
+    <p> The local database is accessed through the JDBC<SUP><FONT SIZE="-2">TM</FONT></SUP> Driver URL.  The following
+    code demonstrates how this works;
+    </p>
+    <table border='0' cellpadding='5'><tr><td bgcolor='#F4F4F4'><pre>
+<font color="#2040a0">java</font>.<font color="#2040a0">sql</font>.<font color="#2040a0">Connection</font> <font color="#2040a0">connection</font><font color="4444FF">;</font>
+<strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+  <font color="#444444">// Register the Mckoi JDBC Driver,</font>
+  <font color="#2040a0">Class</font>.<font color="#2040a0">forName</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;com.mckoi.JDBCDriver&quot;</font><font color="4444FF"><strong>)</strong></font>.<font color="#2040a0">newInstance</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+
+  <font color="#444444">// The Database URL specifies that the database is to be</font>
+  <font color="#444444">// found in the local file system.</font>
+  <font color="#2040a0">String</font> <font color="#2040a0">url</font> <font color="4444FF">=</font> <font color="#008000">&quot;:jdbc:mckoi:local://C:/mckoi/db.conf&quot;</font><font color="4444FF">;</font>
+    
+  <font color="#444444">// Make a connection to a local database,</font>
+  <font color="#2040a0">connection</font> <font color="4444FF">=</font> <font color="#2040a0">java</font>.<font color="#2040a0">sql</font>.<font color="#2040a0">DriverManager</font>.<font color="#2040a0">getConnection</font><font color="4444FF"><strong>(</strong></font>
+                                   <font color="#2040a0">url</font>, <font color="#2040a0">username</font>, <font color="#2040a0">password</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+       
+<font color="4444FF"><strong>}</strong></font>
+<strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">Exception</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+  <font color="#2040a0">System</font>.<font color="#2040a0">err</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;JDBC Driver initialization failure.&quot;</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+  <font color="#2040a0">e</font>.<font color="#2040a0">printStackTrace</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">System</font>.<font color="#2040a0">err</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+  <strong>return</strong><font color="4444FF">;</font>
+<font color="4444FF"><strong>}</strong></font>
+<font color="#444444">// ... 'connection' is now used to talk with the Database </font></pre></td></tr></table>
+
+    <p> Note that the example above assumes the database configuration file
+    is located at 'C:\mckoi\db.conf'.
+    </p>
+  </blockquote>
+<a name="8_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">8.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Can a single database be accessed as both stand-alone and as
+    a database server?  Can the database data files be shared across different
+    Java<SUP><FONT SIZE="-2">TM</FONT></SUP> VMs in stand-alone embedded mode? </font></td></tr></table><blockquote>
+    <p> No for both answers.  If you wish for multiple clients to share access to
+    a database then you will need to run the engine as a server.  If you only require
+    that one application has exclusive access to the database, use the embedded local
+    version.
+    </p>
+  </blockquote>
+</blockquote>
+<h2> Performance Questions </h2>
+<blockquote><a name="9_1"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">9.1.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Why is the first query slower than the second time it is run? </font></td></tr></table><blockquote>
+    <p> There are multiple reasons for this.  The first is the behaviour of
+    modern JIT compilers.  A modern Java<SUP><FONT SIZE="-2">TM</FONT></SUP> JIT compiler, such as Hotspot, compiles
+    the most heavily used code to machine instructions for faster execution.  This
+    means the first time the database is accessed, it may be run through a slower
+    Java<SUP><FONT SIZE="-2">TM</FONT></SUP> interpreter.  Once the hotspots have been found and compiled, the
+    next query will run faster.
+    </p>
+    <p> Secondly, the internal database cache has no knowledge of the most heavily
+    accessed data when the first query is executed.  After the data for a query
+    has been fetched from disk, the cache is filled with information that the next
+    query may be able to utilize.
+    </p>
+  </blockquote>
+<a name="9_2"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">9.2.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> The database takes up too much memory.  How do I reduce the memory requirements? </font></td></tr></table><blockquote>
+    <p> The default configuration has all performance optimizations turned on.
+    Performance optimizations sacrifice memory for better performance, so to reduce
+    memory requirements you will need to alter the performance properties in the
+    database configuration file.
+    </p>
+    <p> The most obvious property to change is the data cache size.  A small
+    database has little to gain from a large cache anyway so try reducing this
+    first.  See the documentation on the configuration properties for further
+    options for optimizing the database.
+    </p>
+    <p> Don't forget to shutdown and restart the database after the configuration
+    file is changed.
+    </p>
+  </blockquote>
+<a name="9_3"></a><table border=0><tr valign="top"><td><font size=+1 face="Arial" color="#0060A0">9.3.</font></td>
+<td><font size=+1 face="Arial" color="#0060A0"> Inserting and updating records is really slow.  Can't it go any faster? </font></td></tr></table><blockquote>
+    <p> The insert and update operations are actually very fast, however during large
+    batches of database changes most of the work is spent managing transaction
+    and index changes.  One way to improve insert and update performance
+    is to turn auto-commit off (it is on by default) and committing
+    the entire batch of insert/update operations in one go.  Using this strategy
+    there will be less overhead for index/transaction maintenance and all
+    transaction data is flushed to disk in a single disk write.
+    </p>
+    <p> The overhead of a transaction commit can also be lessened if the
+    'dont_synch_filesystem=enabled' configuration property is present in the
+    configuration file.  Enabling the 'dont_synch_filesystem' property will
+    prevent the engine waiting for the result of a commit to be synchronized
+    with the disk.  The downside to enabling this property is if the operating
+    system crashes after a commit there is a greater chance of losing
+    the data that was committed in the transaction.
+    </p>
+    
+  </blockquote>
+</blockquote>
+<table width="100%" cellspacing="5"><tr><td><hr size="1">
+<div align="left"><font size=-1>Last Updated: Mon Aug 16 00:27:17 PDT 2004<br></font></div>
+<div align="left"><font size=-1>Mckoi SQL Database Copyright &copy; 2000 - 2004 Diehl and Associates, Inc.  All rights reserved.<br></font></div>
+<br>
+</td></tr></table></BODY></HTML>

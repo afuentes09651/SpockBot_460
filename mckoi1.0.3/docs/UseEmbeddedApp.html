@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD><TITLE>Mckoi SQL Database as an embedded application</TITLE>
+<link REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<body marginwidth="6" marginheight="0" leftmargin="6" rightmargin="6" topmargin="0" text="#000000" bgcolor="#FFFFFF" link="#0060A0" vlink="#001060" alink="#B00040">
+<!-- Title Header -->
+
+<table CELLSPACING="5" CELLPADDING="0" WIDTH="100%" >
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td><a href="index.html"><img SRC="mchead3_tc.gif" height="54" width="480" border="0" alt="Mckoi SQL Database"></a></td>
+</tr>
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td>
+<font face="Arial" size="-1"><a href="index.html">Home</a> / <a href="docindex.html">Documentation</a> / <a href="FAQ.html">FAQ</a> / <a href="index.html#Support">Support</a> / <a href="index.html#Download">Download</a></font><br><b><font size="+1" color="#0060A0"> Mckoi SQL Database as an embedded application</font></b></td>
+</tr>
+</table>
+
+<!-- End Title Header -->
+<h3>Mckoi SQL Database as an embedded application Index</h3>
+<blockquote><ol>
+<li><a href='#1'>Using an embedded Mckoi Database from within your Java<SUP><FONT SIZE="-2">TM</FONT></SUP> application</a><br>
+<li><a href='#2'>Using the JDBC Query Tool on a local database</a><br>
+</ol></blockquote>
+<hr size='1'>
+<a name='1'></a><br><font size='+1' face='Arial' color='#0060A0'>1. Using an embedded Mckoi Database from within your Java<SUP><FONT SIZE="-2">TM</FONT></SUP> application</font>
+<blockquote>
+<p> The following program code demonstrates how to embed a local Mckoi database
+  within your Java<SUP><FONT SIZE="-2">TM</FONT></SUP> application;
+  </p>
+<p><table border='0' cellpadding='5'><tr><td bgcolor='#F4F4F4'><pre><font color="0000ff"><strong>import java.sql.*;</strong></font>
+
+<strong>public</strong> <strong>class</strong> <font color="#2040a0">EmbeddedDatabaseDemo</font> <font color="4444FF"><strong>{</strong></font>
+
+  <strong>public</strong> <strong>static</strong> <strong>void</strong> <font color="#2040a0">main</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">String</font><font color="4444FF"><strong>[</strong></font><font color="4444FF"><strong>]</strong></font> <font color="#2040a0">args</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+
+    <font color="#444444">// Register the Mckoi JDBC Driver</font>
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">Class</font>.<font color="#2040a0">forName</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;com.mckoi.JDBCDriver&quot;</font><font color="4444FF"><strong>)</strong></font>.<font color="#2040a0">newInstance</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">Exception</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;Unable to register the JDBC Driver.<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;Make sure the JDBC driver is in the<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;classpath.<font color="#77dd77">\n</font>&quot;</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">exit</font><font color="4444FF"><strong>(</strong></font><font color="#FF0000">1</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+    <font color="#444444">// This URL specifies we are connecting with a local database</font>
+    <font color="#444444">// within the file system.  './db.conf' is the path of the</font>
+    <font color="#444444">// configuration file of the database to embed.</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">url</font> <font color="4444FF">=</font> <font color="#008000">&quot;jdbc:mckoi:local://./db.conf&quot;</font><font color="4444FF">;</font>
+
+    <font color="#444444">// The username / password to connect under.</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">username</font> <font color="4444FF">=</font> <font color="#008000">&quot;admin_user&quot;</font><font color="4444FF">;</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">password</font> <font color="4444FF">=</font> <font color="#008000">&quot;aupass00&quot;</font><font color="4444FF">;</font>
+
+    <font color="#444444">// Make a connection with the local database.</font>
+    <font color="#2040a0">Connection</font> <font color="#2040a0">connection</font><font color="4444FF">;</font>
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">connection</font> <font color="4444FF">=</font> <font color="#2040a0">DriverManager</font>.<font color="#2040a0">getConnection</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">url</font>, <font color="#2040a0">username</font>, <font color="#2040a0">password</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">SQLException</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;Unable to make a connection to the database.<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;The reason: &quot;</font> <font color="4444FF">+</font> <font color="#2040a0">e</font>.<font color="#2040a0">getMessage</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">exit</font><font color="4444FF"><strong>(</strong></font><font color="#FF0000">1</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <strong>return</strong><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+    
+      <font color="#444444">// .... Use 'connection' to talk to database ....</font>
+
+
+      <font color="#444444">// Close the connection when finished,</font>
+      <font color="#2040a0">connection</font>.<font color="#2040a0">close</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">SQLException</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;An error occured<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;The SQLException message is: &quot;</font> <font color="4444FF">+</font> <font color="#2040a0">e</font>.<font color="#2040a0">getMessage</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <strong>return</strong><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+  <font color="4444FF"><strong>}</strong></font>
+
+<font color="4444FF"><strong>}</strong></font></pre></td></tr></table></p>
+<p> The <code>java.sql.Connection</code> object is used to communicate with
+  the local database.
+  </p>
+<p> It's important to note here that you can only have one Java virtual machine
+  connected to a local database at the same time.  If more than one VM is
+  connected to the same local database then the behaviour is undefined and a
+  likely result will be database corruption.  If you wish for there to be more than
+  one connection to the same database, use Mckoi SQL Database as a multi-threaded
+  multi-user server (see section 'Mckoi SQL Database as a multi-user server').
+  </p>
+<p> There are working demonstrations of creating / populating and querying a
+  database in the <code>/demo</code> directory of the installation.
+  </p>
+</blockquote>
+<br>
+<a name='2'></a><br><font size='+1' face='Arial' color='#0060A0'>2. Using the JDBC Query Tool on a local database</font>
+<blockquote>
+<p>  JDBCQueryTool is a simple utility program developed for Mckoi SQL
+  Database.  It can connect to a Mckoi database, run queries and display the
+  results graphically.  It uses Java<SUP><FONT SIZE="-2">TM</FONT></SUP> Swing/JFC for the user interface.  JDBC
+  Query Tool is an interactive tool that is useful for testing queries, examining
+  and setting up a database.
+  </p>
+<p> To use the JDBC Query Tool on a local database, use the following command;
+  </p>
+<p><pre>java -cp mckoidb.jar com.mckoi.tools.JDBCQueryTool \
+       -url "jdbc:mckoi:local://./db.conf" \
+       -u "admin_user" -p "aupass00"</pre></p>
+<p> This is assuming the configuration file is at path <code>./db.conf</code>
+  in the file system, and the username / password is set the same as from the
+  'Getting Started' section. 
+  </p>
+<p> If all was successful, you'll get a window that looks like this;
+  </p>
+<p><img src='JDBCQTScr1.png' >
+</p>
+<p> Lets create a new table in the database.  Enter the following SQL query
+  and click the <b>Run Query</b> button;
+  </p>
+<p><pre><font color="#803050">CREATE TABLE Order (
+    id       INTEGER    NOT NULL UNIQUE,
+    number   STRING(20),
+    part     STRING(20),
+    price    NUMERIC,
+    quantity NUMERIC
+)</font></pre></p>
+<p>The screen should end up looking like this;
+  </p>
+<p><img src='JDBCQTScr2.png' >
+</p>
+<p> Now populate the Order table with some entries.  Enter the following
+  SQL Query (or put in some different values if you like) and click on the
+  <b>Run Query</b> button.
+  </p>
+<p><pre><font color="#803050">INSERT INTO Order
+    ( id, number, part, price, quantity )
+  VALUES
+    ( 0, 'OR1', 'PA01', 25.95, 1 )</font></pre></p>
+<p> The screen should look like this;
+  </p>
+<p><img src='JDBCQTScr3.png' >
+</p>
+<p> Enter as many additional records into the Order table as you like.
+  </p>
+<p> Now on to a couple of queries on the data in the table.  To look at
+  all the records in the Order table, enter the following;
+  </p>
+<p><pre><font color="#803050">SELECT * FROM Order</font></pre></p>
+<p> You'll get a screen similar to the following (depending on how many order
+  entries you entered);
+  </p>
+<p><img src='JDBCQTScr4.png' >
+</p>
+<p> Or a more complex query that calculates the total quantity of parts in all
+  orders, the total value of all orders, and the average value of each order...
+  </p>
+<p><img src='JDBCQTScr5.png' >
+</p>
+</blockquote>
+<br>
+<table width="100%" cellspacing="5"><tr><td><hr size="1">
+<div align="left"><font size=-1>Last Updated: Mon Aug 16 00:27:18 PDT 2004<br></font></div>
+<div align="left"><font size=-1>Mckoi SQL Database Copyright &copy; 2000 - 2004 Diehl and Associates, Inc.  All rights reserved.<br></font></div>
+<br>
+</td></tr></table></BODY></HTML>

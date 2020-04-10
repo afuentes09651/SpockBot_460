@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD><TITLE>Mckoi SQL Database as a multi-user server</TITLE>
+<link REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<body marginwidth="6" marginheight="0" leftmargin="6" rightmargin="6" topmargin="0" text="#000000" bgcolor="#FFFFFF" link="#0060A0" vlink="#001060" alink="#B00040">
+<!-- Title Header -->
+
+<table CELLSPACING="5" CELLPADDING="0" WIDTH="100%" >
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td><a href="index.html"><img SRC="mchead3_tc.gif" height="54" width="480" border="0" alt="Mckoi SQL Database"></a></td>
+</tr>
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td>
+<font face="Arial" size="-1"><a href="index.html">Home</a> / <a href="docindex.html">Documentation</a> / <a href="FAQ.html">FAQ</a> / <a href="index.html#Support">Support</a> / <a href="index.html#Download">Download</a></font><br><b><font size="+1" color="#0060A0"> Mckoi SQL Database as a multi-user server</font></b></td>
+</tr>
+</table>
+
+<!-- End Title Header -->
+<h3>Mckoi SQL Database as a multi-user server Index</h3>
+<blockquote><ol>
+<li><a href='#1'>Starting the Database Server</a><br>
+<li><a href='#2'>Using JDBCQueryTool to access the database server</a><br>
+<li><a href='#3'>Accessing the server from a Java client application</a><br>
+</ol></blockquote>
+<hr size='1'>
+<a name='1'></a><br><font size='+1' face='Arial' color='#0060A0'>1. Starting the Database Server</font>
+<blockquote>
+<p> The Mckoi database server is a multi-threaded multi-user TCP/IP application
+  that will process SQL queries and dispatch query results to clients.  To start the
+  server (assuming you have created a database from 'Getting Started') use the
+  following command;
+  </p>
+<p><code>java -jar mckoidb.jar</code></p>
+<p> If the database configuration file is not in the current directory you
+  can specify it on the command line with the <code>-conf</code> switch.  See the
+  'Getting Started' section for information on database configuration.
+  </p>
+<p> If the database started correctly you should see something similar to;
+  </p>
+<p><pre>Mckoi SQL Database ( 0.87 beta )
+Copyright (C) 2000 Diehl and Associates, Inc.  All rights reserved.
+Use: -h for help.
+
+  McKoi SQL Database comes with ABSOLUTELY NO WARRANTY.
+  This is free software, and you are welcome to redistribute it
+  under certain conditions.  See LICENSE.txt for details of the
+  GPL License.
+
+JDBC Server on port: 9157.
+Boot time: 711ms.</pre></p>
+<p> This means the database successfully booted and is now listening for
+  connections on port 9157.
+  </p>
+</blockquote>
+<br>
+<a name='2'></a><br><font size='+1' face='Arial' color='#0060A0'>2. Using JDBCQueryTool to access the database server</font>
+<blockquote>
+<p> JDBCQueryTool is a simple utility program developed for Mckoi SQL
+  Database.  It can connect to a Mckoi database, run queries and display the
+  results graphically.  It uses Java<SUP><FONT SIZE="-2">TM</FONT></SUP> Swing/JFC for the user interface.
+  To start JDBCQueryTool enter the following from the installation directory;
+  </p>
+<p><pre>java -cp mckoidb.jar com.mckoi.tools.JDBCQueryTool \
+       -u "admin_user" -p "aupass00"</pre></p>
+<p> This is assuming you set the admin username to '<code>admin_user</code>'
+  and password to '<code>aupass00</code>'.  Also, the database server must
+  be running on localhost.
+  </p>
+<p> If the database is running on a host other than localhost the
+  <code>-url</code> switch is used to tell JDBCQueryTool the host to log onto.  For
+  example, to connect to a database running on host <code>db.myhost.org</code>;
+  </p>
+<p><pre>java -cp mckoidb.jar com.mckoi.tools.JDBCQueryTool \
+       -url "jdbc:mckoi://db.myhost.org/" \
+       -u "admin_usr" -p "aupass00"</pre></p>
+<p> When JDBCQueryTool successfully connects and authenticates the user with
+  the server a screen should appear as follows;
+  </p>
+<p><img src='JDBCQTScr1.png' >
+</p>
+<p> SQL Queries can be entered into the text field at the top of the window.
+  When the <b>Run Query</b> button is pressed the query is sent to the database
+  server and after being processed the result is shown in a table.
+  </p>
+<p> For examples of using the JDBC Query Tool see the examples provided in
+  'Mckoi SQL Database as an embedded application'.
+  </p>
+</blockquote>
+<br>
+<a name='3'></a><br><font size='+1' face='Arial' color='#0060A0'>3. Accessing the server from a Java client application</font>
+<blockquote>
+<p> All access to the database server from a Java application / applet / servlet
+  is via the Mckoi JDBC Driver.  JDBC is the standard Java API for communicating
+  with a database.  The following code demonstrates how to connect to a Mckoi
+  database from within a Java application.
+  </p>
+<p><table border='0' cellpadding='5'><tr><td bgcolor='#F4F4F4'><pre>
+<font color="0000ff"><strong>import java.sql.*;</strong></font>
+
+<strong>public</strong> <strong>class</strong> <font color="#2040a0">ConnectToServerDemo</font> <font color="4444FF"><strong>{</strong></font>
+
+  <strong>public</strong> <strong>static</strong> <strong>void</strong> <font color="#2040a0">main</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">String</font><font color="4444FF"><strong>[</strong></font><font color="4444FF"><strong>]</strong></font> <font color="#2040a0">args</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+
+    <font color="#444444">// Register the Mckoi JDBC Driver</font>
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">Class</font>.<font color="#2040a0">forName</font><font color="4444FF"><strong>(</strong></font><font color="#008000">&quot;com.mckoi.JDBCDriver&quot;</font><font color="4444FF"><strong>)</strong></font>.<font color="#2040a0">newInstance</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">Exception</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;Unable to register the JDBC Driver.<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;Make sure the JDBC driver is in the<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;classpath.<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">exit</font><font color="4444FF"><strong>(</strong></font><font color="#FF0000">1</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+    <font color="#444444">// This URL specifies we are connecting with a database server</font>
+    <font color="#444444">// on localhost.</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">url</font> <font color="4444FF">=</font> <font color="#008000">&quot;jdbc:mckoi://localhost/&quot;</font><font color="4444FF">;</font>
+
+    <font color="#444444">// The username / password to connect under.</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">username</font> <font color="4444FF">=</font> <font color="#008000">&quot;admin_user&quot;</font><font color="4444FF">;</font>
+    <font color="#2040a0">String</font> <font color="#2040a0">password</font> <font color="4444FF">=</font> <font color="#008000">&quot;aupass00&quot;</font><font color="4444FF">;</font>
+
+    <font color="#444444">// Make a connection with the database.</font>
+    <font color="#2040a0">Connection</font> <font color="#2040a0">connection</font><font color="4444FF">;</font>
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">connection</font> <font color="4444FF">=</font> <font color="#2040a0">DriverManager</font>.<font color="#2040a0">getConnection</font><font color="4444FF"><strong>(</strong></font><font color="#2040a0">url</font>, <font color="#2040a0">username</font>, <font color="#2040a0">password</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">SQLException</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;Unable to make a connection to the database.<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;The reason: &quot;</font> <font color="4444FF">+</font> <font color="#2040a0">e</font>.<font color="#2040a0">getMessage</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">exit</font><font color="4444FF"><strong>(</strong></font><font color="#FF0000">1</font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <strong>return</strong><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+    <strong>try</strong> <font color="4444FF"><strong>{</strong></font>
+    
+      <font color="#444444">// .... Use 'connection' to talk to database ....</font>
+
+
+      <font color="#444444">// Close the connection when finished,</font>
+      <font color="#2040a0">connection</font>.<font color="#2040a0">close</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+
+    <font color="4444FF"><strong>}</strong></font>
+    <strong>catch</strong> <font color="4444FF"><strong>(</strong></font><font color="#2040a0">SQLException</font> <font color="#2040a0">e</font><font color="4444FF"><strong>)</strong></font> <font color="4444FF"><strong>{</strong></font>
+      <font color="#2040a0">System</font>.<font color="#2040a0">out</font>.<font color="#2040a0">println</font><font color="4444FF"><strong>(</strong></font>
+        <font color="#008000">&quot;An error occured<font color="#77dd77">\n</font>&quot;</font> <font color="4444FF">+</font>
+        <font color="#008000">&quot;The SQLException message is: &quot;</font> <font color="4444FF">+</font> <font color="#2040a0">e</font>.<font color="#2040a0">getMessage</font><font color="4444FF"><strong>(</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF"><strong>)</strong></font><font color="4444FF">;</font>
+      <strong>return</strong><font color="4444FF">;</font>
+    <font color="4444FF"><strong>}</strong></font>
+
+  <font color="4444FF"><strong>}</strong></font>
+
+<font color="4444FF"><strong>}</strong></font></pre></td></tr></table></p>
+<p> There are further examples in the <code>/demo</code> directory of the
+  software installation.  While the demonstration programs use the Mckoi engine
+  as an embedded database, all that changes from connecting to an embedded
+  database and connecting to a remote server is the JDBC URL.
+  </p>
+</blockquote>
+<br>
+<table width="100%" cellspacing="5"><tr><td><hr size="1">
+<div align="left"><font size=-1>Last Updated: Mon Aug 16 00:27:18 PDT 2004<br></font></div>
+<div align="left"><font size=-1>Mckoi SQL Database Copyright &copy; 2000 - 2004 Diehl and Associates, Inc.  All rights reserved.<br></font></div>
+<br>
+</td></tr></table></BODY></HTML>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mckoidb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mckoidb.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

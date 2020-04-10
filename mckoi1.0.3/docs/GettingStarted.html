@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD><TITLE>Getting Started</TITLE>
+<link REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<body marginwidth="6" marginheight="0" leftmargin="6" rightmargin="6" topmargin="0" text="#000000" bgcolor="#FFFFFF" link="#0060A0" vlink="#001060" alink="#B00040">
+<!-- Title Header -->
+
+<table CELLSPACING="5" CELLPADDING="0" WIDTH="100%" >
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td><a href="index.html"><img SRC="mchead3_tc.gif" height="54" width="480" border="0" alt="Mckoi SQL Database"></a></td>
+</tr>
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td>
+<font face="Arial" size="-1"><a href="index.html">Home</a> / <a href="docindex.html">Documentation</a> / <a href="FAQ.html">FAQ</a> / <a href="index.html#Support">Support</a> / <a href="index.html#Download">Download</a></font><br><b><font size="+1" color="#0060A0"> Getting Started</font></b></td>
+</tr>
+</table>
+
+<!-- End Title Header -->
+<h3>Getting Started Index</h3>
+<blockquote><ol>
+<li><a href='#1'>Before You Begin</a><br>
+<li><a href='#2'>Creating A Database</a><br>
+<li><a href='#3'>Database Configuration</a><br>
+</ol></blockquote>
+<hr size='1'>
+<a name='1'></a><br><font size='+1' face='Arial' color='#0060A0'>1. Before You Begin</font>
+<blockquote>
+<p> To use Mckoi SQL Database, you will need a Java<SUP><FONT SIZE="-2">TM</FONT></SUP> runtime environment version
+  1.2 or greater.  Sun provides Java runtimes for Win32, Solaris and Linux from their
+  website at <a href="http://www.javasoft.com/j2se/">http://www.javasoft.com/j2se/</a>.  IBM also provides various
+  Java runtimes for a number of platforms at <a href="http://www.ibm.com/java/jdk/download/">http://www.ibm.com/java/jdk/download/</a>.
+  </p>
+<p> When Java has been installed on your system, unpack the mckoi distribution file to
+  a directory in your file system.  Then you are ready to create a database and develop
+  your database application.
+  </p>
+</blockquote>
+<br>
+<a name='2'></a><br><font size='+1' face='Arial' color='#0060A0'>2. Creating A Database</font>
+<blockquote>
+<p> Before you can begin development of your database application, you will need to
+  create and configure a blank database.  The database configuration file describes all
+  of the configurable properties of the database (details of the database
+  configuration file are covered in the next section).  The software ships with a default
+  configuration that looks for a database at path <code>./data</code> in your filesystem.  
+  </p>
+<p> To create a database using the default configuration with an admin username of
+  '<code>admin_user</code>' and password '<code>aupass00</code>', go to a prompt, change to
+  the Mckoi Database distribution directory and type:
+  </p>
+<p><code>java -jar mckoidb.jar -create "admin_user" "aupass00"</code></p>
+<p> We do not advise using either this username or password in a production system.  The
+  user created here has full control over every aspect of the database so choose a
+  username / password carefully.
+  </p>
+<p> When the command has completed, a sub-directory called <code>data</code> will have
+  been generated.  This directory is used to store data from the database.  A sub-directory
+  called <code>log</code> is also generated which stores debugging and query log
+  information.
+  </p>
+</blockquote>
+<br>
+<a name='3'></a><br><font size='+1' face='Arial' color='#0060A0'>3. Database Configuration</font>
+<blockquote>
+<p> When you run the <code>mckoidb.jar</code> package, it looks for a file named <code>db.conf</code>
+  in the current directory.  This file contains a number of variables that determine where
+  the database looks for information, as well as other user-definable properties.  The
+  configuration file can be renamed and copied to a different location.  If you change the
+  configuration file location, you must supply the location when you run the database;
+  </p>
+<p><code>java -jar mckoidb.jar -conf [location of conf file] ..... </code></p>
+<p> You can edit the configuration file with a text editor.  The default configuration
+  file that ships with the software contains extensive comments on what each variable does.  
+  </p>
+</blockquote>
+<br>
+<table width="100%" cellspacing="5"><tr><td><hr size="1">
+<div align="left"><font size=-1>Last Updated: Mon Aug 16 00:27:18 PDT 2004<br></font></div>
+<div align="left"><font size=-1>Mckoi SQL Database Copyright &copy; 2000 - 2004 Diehl and Associates, Inc.  All rights reserved.<br></font></div>
+<br>
+</td></tr></table></BODY></HTML>

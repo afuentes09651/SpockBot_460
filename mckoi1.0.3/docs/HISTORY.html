@@ -1,0 +1,1905 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD><TITLE>Mckoi SQL Database - Version History</TITLE>
+<link REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<body marginwidth="6" marginheight="0" leftmargin="6" rightmargin="6" topmargin="0" text="#000000" bgcolor="#FFFFFF" link="#0060A0" vlink="#001060" alink="#B00040">
+<!-- Title Header -->
+
+<table CELLSPACING="5" CELLPADDING="0" WIDTH="100%" >
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td><a href="index.html"><img SRC="mchead3_tc.gif" height="54" width="480" border="0" alt="Mckoi SQL Database"></a></td>
+</tr>
+<tr ALIGN="RIGHT" VALIGN="TOP" >
+<td>
+<font face="Arial" size="-1"><a href="index.html">Home</a> / <a href="docindex.html">Documentation</a> / <a href="FAQ.html">FAQ</a> / <a href="index.html#Support">Support</a> / <a href="index.html#Download">Download</a></font><br><b><font size="+1" color="#0060A0"> Mckoi SQL Database - Version History</font></b></td>
+</tr>
+</table>
+
+<!-- End Title Header -->
+<hr><h3>Mckoi SQL Database History</h3>
+<p></p>
+<blockquote>
+<a href='#1.0.3'>Version 1.0.3 - August 16, 2004</a><br>
+<a href='#1.0.2'>Version 1.0.2 - June 25, 2003</a><br>
+<a href='#1.0.1'>Version 1.0.1 - May 20, 2003</a><br>
+<a href='#1.00'>Version 1.00 - May 5, 2003</a><br>
+<a href='#0.94_beta'>Version 0.94 beta - September 17, 2002</a><br>
+<a href='#0.93_beta'>Version 0.93 beta - April 11, 2002</a><br>
+<a href='#0.92_beta'>Version 0.92 beta - October 28, 2001</a><br>
+<a href='#0.91_beta'>Version 0.91 beta - September 6, 2001</a><br>
+<a href='#0.90_beta'>Version 0.90 beta - May 23, 2001</a><br>
+<a href='#0.89_beta'>Version 0.89 beta - February 25, 2001</a><br>
+<a href='#0.88b_beta'>Version 0.88b beta - December 16, 2000</a><br>
+<a href='#0.88_beta'>Version 0.88 beta - December 10, 2000</a><br>
+<a href='#0.87_beta'>Version 0.87 beta - November 12, 2000</a><br>
+<a href='#0.86_beta'>Version 0.86 beta - October 15, 2000</a><br>
+<a href='#0.85_beta'>Version 0.85 beta - September 23, 2000</a><br>
+</blockquote>
+<br>
+<h3><a name='1.0.3'></a>Version 1.0.3 - August 16, 2004</h3>
+<ul>
+<li>
+
+  <p> Change to the handling of Timestamp to correct for changes in the 1.4
+    Java API implementation.
+  </p>
+<li>
+
+  <p> Correction of precedence of mathematical operators.
+  </p>
+<li>
+
+  <p> Fix for a bug when callback triggers fired on connections that are
+    closed.
+  </p>
+<li>
+
+  <p> Sequence generator bug fixed.  The value of the sequence was not being
+    flushed correctly.
+  </p>
+<li>
+
+  <p> A problem with historical index structures was fixed that could cause
+    an exception in some very busy situations.
+  </p>
+<li>
+
+  <p> A race condition fixed with the index store.
+  </p>
+<li>
+
+  <p> Fix for a problem with the repair tool that could cause corruption
+    in cases when the <code>page_size</code> configuration property was changed
+    from the default.
+  </p>
+<li>
+
+  <p> Fix for bug with multiple streamable objects inside a series of
+    <code>PreparedStatement</code> batch updates.  Streamable
+    object behaviour changed slightly - the <code>InputStream</code> associated
+    with a streamable object on the client side is no longer closed and the reference
+    to the <code>InputStream</code> is removed faster.
+  </p>
+<li>
+
+  <p> Fix for <code><font color="#803050">DROP TABLE IF EXISTS</font></code> bug.
+  </p>
+<li>
+
+  <p> Fix for 'too many root locks removed' exception reported when
+    shutting down a database that has open result sets.
+  </p>
+<li>
+
+  <p> Fix for <code>SynchFailedException</code> reported under some
+    operating systems.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">INSERT INTO</font></code> syntax now accepts the <code><font color="#803050">DEFAULT</font></code>
+    keyword for inserted values.  For example,
+    <code><font color="#803050">INSERT INTO my_table ( ident, str ) VALUES ( DEFAULT, 'a_string' )</font></code>
+  </p>
+<li>
+
+  <p> <code>force_regex_library</code> property added to work around the problem
+    in GCJ 3.3 where the internal regex API is present but not implemented.  The
+    <code>force_regex_library</code> property forces a particular regular expression
+    library.
+  </p>
+<li>
+
+  <p> Fixed GCJ problem.  Mckoi can now be successfully compiled and
+    run on the GNU GCC/GCJ platform.  Test suite passed.  Thanks to Geert Bevin.
+  </p>
+</ul>
+<br>
+<h3><a name='1.0.2'></a>Version 1.0.2 - June 25, 2003</h3>
+<ul>
+<li>
+
+  <p> Fixed schema constraint name error.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">CALL</font></code> now produces a nicer error message when
+    it encounters a reference (non-constant) parameter.
+  </p>
+<li>
+
+  <p> Changed <code><font color="#803050">JOIN ... ON</font></code> clause in <code><font color="#803050">SELECT</font></code> to
+    better handle queries produced by Hibernate.
+  </p>
+<li>
+
+  <p> Fixed problem with aggregated functions nested in a function.
+    For example, <code><font color="#803050">SELECT COALESCE(MIN(id), 0) FROM MyTable</font></code> previously generated
+    an error when MyTable was empty, and now results with 0.
+  </p>
+<li>
+
+  <p> Added <code>||</code> operator for string concatenation.
+  </p>
+<li>
+
+  <p> Fixed <code>NullPointerException</code> when repairing a
+    database that references information in the BLOB store.
+  </p>
+<li>
+
+  <p> Fixed error when parsing JDBC escape sequences and strings in
+    the same query (bug report thanks to Martin Cordova).
+  </p>
+<li>
+
+  <p> Fixed error when inserting small strings for columns defined
+    as <code><font color="#803050">CLOB</font></code> (bug report thanks to M. A. Sridhar).
+  </p>
+<li>
+
+  <p> <code>Transaction.count</code> status fix.
+  </p>
+<li>
+
+  <p> A new check point based journaling system for failure recovery.
+  </p>
+<li>
+
+  <p> A revision of the file reclamation process.
+  </p>
+<li>
+
+  <p> Stopped database lock file being generated in read-only mode.
+  </p>
+</ul>
+<br>
+<h3><a name='1.0.1'></a>Version 1.0.1 - May 20, 2003</h3>
+<ul>
+<li>
+
+  <p> JDBCScriptTool changed to output error code when an error occurs.
+  </p>
+<li>
+
+  <p> <code>ResultSetMetaData.getColumnClassName</code> now returns
+    the correct details as required by the JDBC specification.
+  </p>
+<li>
+
+  <p> Corrected error message when inserting into a table that
+    doesn't exist.
+  </p>
+<li>
+
+  <p> Fixed bug when <code><font color="#803050">SELECT</font></code> alias defined as the same
+    name as the column.  For example, <code><font color="#803050">SELECT a AS a FROM a_table</font></code>.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">BINARYTOHEX</font></code> SQL function now correctly uses the
+    <code>BlobAccessor</code> interface.
+  </p>
+<li>
+
+  <p> Fixed bug with Blob Store backup.  Backup of large
+    objects now works in a similar fashion to the rest of the backup procedure.
+  </p>
+<li>
+
+  <p> String -> StringObject fix in Castor.java by Jim McBeath.
+  </p>
+<li>
+
+  <p> Fixed constraint check bug during commit when altering a
+    table and updating data within a transaction.  Thanks to Tuncay for the bug
+    report.
+  </p>
+</ul>
+<br>
+<h3><a name='1.00'></a>Version 1.00 - May 5, 2003</h3>
+<ul>
+<li>
+
+  <p> Included Howard Lewis Ship's JBoss MBean implementation into
+    <code>mckoidb.jar</code>.  The MBean includes two classes,
+    <code>net.sf.tapestry.contrib.mckoi.McKoiDB</code> and
+    <code>net.sf.tapestry.contrib.mckoi.McKoiDBMBean</code>.
+  </p>
+<li>
+
+  <p> Fixed <code>DatabaseMetaData.getTypeInfo</code> result which previously
+    created an incorrectly typed <code>NULLABLE</code> column.
+  </p>
+<li>
+
+  <p> Named all Mckoi threads.
+  </p>
+<li>
+
+  <p> The namespace conflict check in the commit process was optimized.  It now
+    maintains an in-memory list that is used to check for name clashes across
+    concurrent transactions.
+  </p>
+<li>
+
+  <p> The commit process was streamlined slightly to prevent a redundant index check
+    in some common cases.
+  </p>
+<li>
+
+  <p> Fixed bug when creating tables, assigning foreign keys and inserting
+    values inside a single transaction.  (test case: ruslan_bug.txt)
+  </p>
+<li>
+
+  <p> New streamable object support - allows for very large streams of
+    <code><font color="#803050">BINARY</font></code> and <code><font color="#803050">TEXT</font></code> data to be handled efficiently by
+    the engine.
+  </p>
+<li>
+
+  <p> Fixed bug with <code><font color="#803050">ALTER USER</font></code> that could corrupt the user
+    details.
+  </p>
+<li>
+
+  <p> A user is now able to alter their own password via the <code><font color="#803050">ALTER USER</font></code>
+    command.
+  </p>
+<li>
+
+  <p> Grammar changes to support long form SQL types such as <code><font color="#803050">CHARACTER VARYING</font></code>
+    which is equivalent to <code><font color="#803050">VARCHAR</font></code> and <code><font color="#803050">LONG CHARACTER VARYING</font></code>
+    which is equivalent to <code><font color="#803050">LONGVARCHAR</font></code>.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">CURRENT_DATE</font></code>, <code><font color="#803050">CURRENT_TIMESTAMP</font></code> and
+    <code><font color="#803050">CURRENT_TIME</font></code> literals are now supported by the grammar.
+  </p>
+<li>
+
+  <p> SQL grammar now accepts <code><font color="#803050">- identifier</font></code>.  Fixed unary problem
+    with productions such as <code><font color="#803050">identifier-1</font></code> and
+    <code><font color="#803050">identifier--1</font></code>.
+  </p>
+<li>
+
+  <p> <code>TransactionSystem</code> dispose method is now correctly used
+    by the Control API.
+  </p>
+<li>
+
+  <p> Added batch update support to the JDBC driver.
+  </p>
+<li>
+
+  <p> System stored procedure <code>SYSTEM_MAKE_BACKUP</code> changes to work
+    better on a busy system.  This function no longer obtains
+    exclusive locks on tables and the database image produced is cleaner.
+  </p>
+<li>
+
+  <p> Fixed memory leak with the database dispatcher thread and the shutdown
+    hook when many database sessions are started and stopped in a JVM.
+  </p>
+<li>
+
+  <p> The persistence layer has been abstracted behind the <code>StoreSystem</code>
+    interface.  <code>StoreSystem</code> is implemented in <code>V1FileStoreSystem</code>
+    and <code>V1HeapStoreSystem</code>.
+  </p>
+<li>
+
+  <p> Rewrite of the low level IO functions including an improved page cache
+    algorithm based on page lifespan and traffic with respect to all other
+    pages.
+  </p>
+<li>
+
+  <p> The engine no longer uses NIO by default but can be configured to do
+    so.  To enable NIO, add <code>use_nio_if_available=enabled</code> to the
+    database configuration.  Note that the <code>do_not_use_nio_api</code>
+    property that was popular in 0.94 is now ignored.
+  </p>
+<li>
+
+  <p> Grammar change - The <code><font color="#803050">CREATE TRIGGER</font></code> grammar found in
+    previous releases has been changed to <code><font color="#803050">CREATE CALLBACK TRIGGER</font></code>.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">CREATE SEQUENCE</font></code>, <code><font color="#803050">DROP SEQUENCE</font></code> to
+    grammar.  See documentation for details.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">CREATE TRIGGER</font></code>, <code><font color="#803050">DROP TRIGGER</font></code> to
+    grammar.  See documentation for details.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">CREATE FUNCTION</font></code>, <code><font color="#803050">DROP FUNCTION</font></code> to
+    grammar.  See documentation for details.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">BINARY</font></code>, <code><font color="#803050">VARBINARY</font></code> and <code><font color="#803050">LONGVARBINARY</font></code> all now
+    accept a size constraint.
+  </p>
+<li>
+
+  <p> Fixed a type of index store corruption problem that was exposed by
+    SnipSnap (<a href="http://snipsnap.org/">http://snipsnap.org/</a>).
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">CAST</font></code> SQL function.  For example,
+    <code><font color="#803050">CAST('400' AS NUMERIC)</font></code>.
+  </p>
+<li>
+
+  <p> Fixed bug when casting an unknown sized <code><font color="#803050">CHAR</font></code> string in the
+    JDBC driver.  Thanks to Waldo auf der Springe for the fix.
+  </p>
+</ul>
+<br>
+<h3><a name='0.94_beta'></a>Version 0.94 beta - September 17, 2002</h3>
+<ul>
+<li>
+
+  <p> (in 0.94h) Added several null checks to the <code>setxxx</code> methods of
+   the JDBC driver.
+  </p>
+<li>
+
+  <p> (in 0.94h) Fixed <code>NullPointerException</code> in <code>ResultSet.getBigDecimal</code> 
+  </p>
+<li>
+
+  <p> (in 0.94h) Removed a confusing message output to System.out in the JDBC client.
+  </p>
+<li>
+
+  <p> (in 0.94h) There is now only one SQL parser instance per JVM managed by
+    the evaluator to reduce memory requirements.
+  </p>
+<li>
+
+  <p> (in 0.94h) Non indexed range search error fixed (bug report by Elmar Haneke).
+  </p>
+<li>
+
+  <p> (in 0.94h) Aggregate functions are no longer cached in a <code>FunctionTable</code>.
+  </p>
+<li>
+
+  <p> (in 0.94h) Fixed error that causes an exception when the query planner
+    plans a union on an aliased table.
+  </p>
+<li>
+
+  <p> (in 0.94h) Index problem error (non-corrupting) fixed.  Bug report by
+    Tervo Salminen.
+  </p>
+<li>
+
+  <p> (in 0.94h) Fixed bug generated when using <code><font color="#803050">GROUP BY</font></code> in a <code><font color="#803050">VIEW</font></code>
+    (bug report by Scott).
+  </p>
+<li>
+
+  <p> (in 0.94h) Added Jim McBeath's best search constructor patch.
+  </p>
+<li>
+
+  <p> (in 0.94h) Repair tool improvements for fixing corrupt databases.
+  </p>
+<li>
+
+  <p> (in 0.94h) Sequence id for system tables are now reset when a database is
+    repaired or upgraded.
+  </p>
+<li>
+
+  <p> (in 0.94h) NIO disabled on 95/98 machines.
+  </p>
+<li>
+
+  <p> (in 0.94g) Fixed double open repair tool problem in <code>V2MasterTableDataSource</code>.
+    Thanks to Elmar Haneke for the report.
+  </p>
+<li>
+
+  <p> (in 0.94g) Workaround for NIO file synch issues under Windows 98.
+  </p>
+<li>
+
+  <p> (in 0.94g) Repair scan change in <code>com.mckoi.store.AbstractStore</code> because
+    the recursive nature of the scan was causing stack overflow problems.
+  </p>
+<li>
+
+  <p> (in 0.94g) Fixed incorrect handling of NULL in joins.  Thanks to David Tinker for
+    the report.
+  </p>
+<li>
+
+  <p> (in 0.94g) <code><font color="#803050">BIT</font></code> and <code><font color="#803050">NUMERIC</font></code> are now comparable types.
+    Thanks to Aaron Westendorf for the report.
+  </p>
+<li>
+
+  <p> (in 0.94f) Added 'create_or_boot' flag to JDBC URL which is the same as the
+    'boot_or_create' flag.
+  </p>
+<li>
+
+  <p> (in 0.94f) The <code>PreparedStatement.setObject</code> method now correctly casts
+    primitive Java language objects as per the JDBC specification.
+  </p>
+<li>
+
+  <p> (in 0.94e) Fixed outer join regression bug.  Thanks to Bernard for providing the
+    test case.
+  </p>
+<li>
+
+  <p> (in 0.94e) Fixed <code><font color="#803050">IN</font></code> regression bug, and bug with aggregated functions
+    and <code><font color="#803050">NULL</font></code>.  Thanks to Doug Currie (<a href="http://hibernate.sourceforge.net/">http://hibernate.sourceforge.net/</a>).
+  </p>
+<li>
+
+  <p> (in 0.94e) Performance enhancement for natural joins.
+  </p>
+<li>
+
+  <p> (in 0.94d) Upgraded grammar to JavaCC 2.1 and enabled parsing of unicode characters.
+  </p>
+<li>
+
+  <p> (in 0.94d) Large result set memory use optimizations made to <code>FunctionTable</code>
+    and <code>jdbcserver.AbstractJDBCDatabaseInterface</code>.
+  </p>
+<li>
+
+  <p> (in 0.94d) Fixed <code>DataCellCache</code> bug that might cause more cache
+    misses than necessary under heavy record recycling conditions.
+  </p>
+<li>
+
+  <p> Added String types that may be given locale collation ordering.  For example,
+    <code><font color="#803050">japanese_string TEXT COLLATE 'jaJP'</font></code>.
+  </p>
+<li>
+
+  <p> Binary data can now be collated.  An index will not be created on
+    binary data.
+  </p>
+<li>
+
+  <p> Referential actions are now processed when data in a table is
+    deleted/updated.  For example,
+    <code><font color="#803050">customer_name REFERENCES Customer(name) ON UPDATE CASCADE</font></code> will
+    cause an update made to Customer to be reflected in any 'customer_name' keys
+    in the table.
+  </p>
+<li>
+
+  <p> The configuration file for making a local database connection can now be
+    inside a .jar file.  For exmaple;
+    <code>jdbc:mckoi:local://myjarfile.jar!/mckoi/mydbsettings.conf</code>.
+  </p>
+<li>
+
+  <p> Rewrote <code>com.mckoi.tools.DataFileConvertTool</code> to be used to
+    convert between different versions of the database file format.  The
+    database will now fail to work with incompatible file formats.
+  </p>
+<li>
+
+  <p> Overhaul of the engine type system to add strong type features.  <code><font color="#803050">NULL</font></code>s
+  are now passed with their original type information.
+  </p>
+<li>
+
+  <p> Added a basic <code><font color="#803050">CALL</font></code> syntax to the grammar to allow for
+    backups of the database to be made while live.  For example;
+    <code><font color="#803050">CALL SYSTEM_MAKE_BACKUP('/my_mckoi/backups/1')</font></code>.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">COMPACT TABLE</font></code> will now ALWAYS compact a table to the
+    smallest size.
+  </p>
+<li>
+
+  <p> Added transient (non serialized) caching for <code>Function</code>
+    objects in <code>FunctionDef</code> to improve function performance.
+  </p>
+<li>
+
+  <p> Completed <code><font color="#803050">CREATE USER</font></code>, <code><font color="#803050">DROP USER</font></code> and
+    <code><font color="#803050">GRANT</font></code>, <code><font color="#803050">REVOKE</font></code> syntax.
+  </p>
+<li>
+
+  <p> 0.94 features a redesigned file heap manager that uses the new memory
+    mapping functionality from the NIO API in Java 1.4.  The new file structure
+    should improve database read/write operations and allow for future
+    extensibility of the database file format.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">VIEW</font></code> functionality to the engine that can be used
+    via <code><font color="#803050">CREATE VIEW</font></code> and <code><font color="#803050">DROP VIEW</font></code> queries.
+  </p>
+<li>
+
+  <p> Added a shutdown hook on 1.3 Java VMs that attempts to wait for any
+    write operations to finish before allowing the VM to exit.
+  </p>
+<li>
+
+  <p> Fixed referential integrity bug when deleting a referenced record with
+    a key that is null.  Thanks to Patrick Godeau.
+  </p>
+<li>
+
+  <p> Fixed a bug with using upper-case boolean literals.  Thanks to
+    Bernard for reporting the bug.
+  </p>
+<li>
+
+  <p> An error is now thrown when an attempt is made to insert values into
+    a column of a table that doesn't exist.  The previous behaviour was that the
+    problem was silently ignored.
+  </p>
+<li>
+
+  <p> Fixed a bug with <code><font color="#803050">ORDER BY</font></code> - if the order direction was
+    not specified, it defaulted to the direction of the previous column.  It
+    now defaults to <code><font color="#803050">ASC</font></code> if no direction specified.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">SUBSTRING</font></code> function changed to be SQL compliant.
+  </p>
+<li>
+
+  <p> Changed handling of <code><font color="#803050">NULL</font></code> with boolean operators.  An expression
+    <code><font color="#803050">WHERE column_with_null_values = NULL</font></code> now evaluates to <code><font color="#803050">NULL</font></code>
+    which results in no values being found.  An expression that evaluates to
+    <code><font color="#803050">TRUE</font></code> for <code><font color="#803050">NULL</font></code> values is <code><font color="#803050">WHERE column_with_null_values IS NULL</font></code>.
+  </p>
+<li>
+
+  <p> Fixed a bug with <code><font color="#803050">NOT IN</font></code> and <code><font color="#803050">ANY <></font></code> that
+    occurred when the sub-query contained an empty result.  Thanks to Kevin Schmidt
+    for finding the bug and providing the test case.
+  </p>
+<li>
+
+  <p> Fixed bug with <code>DatabaseMetaData.getPrimaryKeys</code> when engine set to
+    case-insensitive identifier mode.  Thanks to Partrick Godeau.
+  </p>
+<li>
+
+  <p> Inner join bug fix for some complex uses of inner joins.  Thanks to Bernard and
+    Jim McBeath for bug reports.
+  </p>
+<li>
+
+  <p> Fixed a bug with <code><font color="#803050">DISTINCT</font></code> and <code><font color="#803050">ORDER BY</font></code> in a <code><font color="#803050">SELECT</font></code>
+    that caused incorrect ordering due to a problem with the query planner.  Thanks to
+    M. A. Sridhar for finding the error and producing the test case.
+  </p>
+<li>
+
+  <p> Fixed a caching problem when updating information that passed over the max cache size
+    threshold.  Thanks to Frank Hemer for finding the problem and spending the time to
+    produce a test case that reproduced the problem.
+  </p>
+</ul>
+<br>
+<h3><a name='0.93_beta'></a>Version 0.93 beta - April 11, 2002</h3>
+<ul>
+<li>
+
+  <p> Changed <code>DatabaseMetaData.getPrimaryKeys</code> so that a schema parameter of
+    null includes all schema in the primary keys search.  Also changed <code>getImportedKeys</code>,
+    <code>getExportedKeys</code> and <code>getCrossReference</code> methods for the same
+    reason.
+  </p>
+<li>
+
+  <p> String literals parsed through the SQL grammar now allow for multiple lines.
+  </p>
+<li>
+
+  <p> Included Jim McBeath's JavaDoc HTML files and build instructions with the
+    source.
+  </p>
+<li>
+
+  <p> <code>MSQLException</code> now overwrites the <code>printStackTrace</code> methods
+    to better inform of the error that occurred.
+  </p>
+<li>
+
+  <p> Added a new API for controlling Mckoi databases running within the JVM.
+  </p>
+  <p> The new API is found in the <code>com.mckoi.database.control</code> package and
+    allows for programmatic configuration, JDBC access and low-level access to one or more
+    Mckoi database engines running in the current JVM.  It also provides for binding of
+    TCP/IP Mckoi JDBC servers to local databases.
+  </p>
+<li>
+
+  <p> Extensive engine plumbing changes.
+  </p>
+  <p> The engine now supports multiple databases running within the same JVM.  Debug
+    logging and system properties and services are no longer optained via static
+    references.
+  </p>
+<li>
+
+  <p> Implemented an internal <code>java.sql.Connection</code> that is accessed from
+    a <code>DatabaseConnection</code> object.  This allows the possibility of SQL
+    queries through a JDBC interface against the database from inside the engine.
+  </p>
+<li>
+
+  <p> Improved the data cache hashing size algorithm to scale better for larger sized
+    caches.
+  </p>
+<li>
+
+  <p> Changed behaviour in 0.93pr1 to allow <code><font color="#803050">ORDER BY</font></code> on columns not
+    selected.
+  </p>
+<li>
+
+  <p> Fixed bug in a correlated sub-query with a constant on the LHS of the
+    sub-query operator.  eg. <code><font color="#803050">4 in ( select ...</font></code>.  Thanks to Doug
+    Currie (<a href="http://hibernate.sourceforge.net/">http://hibernate.sourceforge.net/</a>).
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">BLOB</font></code> type which is an alias of <code><font color="#803050">LONGVARBINARY</font></code>.
+  </p>
+<li>
+
+  <p> <code>'user'</code> and <code>'password'</code> properties can now be
+    specified in the remote JDBC URL string.  For example,
+    <code>jdbc:mckoi://localhost/?user=my_username&password=my_password</code>.
+  </p>
+<li>
+
+  <p> Comparing against SQL <code><font color="#803050">CHAR</font></code> types now pads or
+    truncates as necessary.
+  </p>
+<li>
+
+  <p> Bug fixed with planner code on a join behind an OR.  Thanks to
+    Bill Lear.
+  </p>
+<li>
+
+  <p> If the <code>java.util.regex</code> package is detected (available in 1.4)
+    the engine will now use it instead of the GNU regex library.
+  </p>
+<li>
+
+  <p> Expressions may now include the NOT operator.  For example,
+    <code><font color="#803050">NOT (A > 3 OR B = 2)</font></code> which is equivalent to
+    <code><font color="#803050">(A <= 3 AND B <> 2)</font></code>.
+  </p>
+<li>
+
+  <p> Added support for correlated sub-queries.
+  </p>
+<li>
+
+  <p> A new query planning architecture has been implemented for this release.
+  </p>
+<li>
+
+  <p> The <code>getX(String, ...</code> methods in <code>ResultSet</code> now
+    ignore the case of the identifier if the database is setup for case
+    insensitive identifiers.
+  </p>
+<li>
+
+  <p> Unique identifiers now start at 1 instead of 0 for freshly created tables.
+  </p>
+<li>
+
+  <p> Inline aggregate functions are now allowed in the <code><font color="#803050">HAVING</font></code> clause.
+    Previously the only way to use an aggregate function was to reference it
+    indirectly via a named aggregate function column.
+  </p>
+<li>
+
+  <p> Fixed a synchronization problem in <code>Database.java</code>.  Thanks to
+    Brent Taylor for the very detailed bug report.
+  </p>
+<li>
+
+  <p> Fixed a bug with the client-server protocol that under some situations would
+    cause the query to not include all the arguments in a <code>PreparedStatement</code>.
+    Thanks to Volker Turau.
+  </p>
+<li>
+
+  <p> Changed <code>MPreparedStatement</code> and <code>CastHelper</code> classes
+    to correctly cast long values to a BigDecimal.  Previously the engine was
+    silently casting long values to double before being cast to a BigDecimal.  Thanks
+    to Doug Currie (<a href="http://hibernate.sourceforge.net/">http://hibernate.sourceforge.net/</a>) for finding the
+    error.
+  </p>
+<li>
+
+  <p> <code>MPreparedStatement.setCharacterStream</code> bug fixed.  Thanks
+    to Victor Chew.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">ALTER TABLE table ADD CONSTRAINT FOREIGN KEY</font></code> with columns
+    specified in the REFERENCES part bug fixed.
+  </p>
+<li>
+
+  <p> Fixed bug in <code>MPreparedStatement.execute()</code> that returned
+    true instead of false for update results.  Thanks to Gyuri Lajos and
+    John Kos at EasySoft.
+  </p>
+<li>
+
+  <p> The <code>MResultSetMetaData.getPrecision</code> method now returns the
+    size of string <code><font color="#803050">*CHAR</font></code> SQL types.  This change was made for
+    JBuilder compatibility.
+  </p>
+<li>
+
+  <p> <code>MDatabaseMetaData</code> now supports the 'type' parameter in the
+    <code>getTables</code> method.
+  </p>
+<li>
+
+  <p> Fixed issue in <code>com/mckoi/jfccontrols/QueryAgent.java</code> that
+    could cause an indefinite block under certain thread situations.  Thanks
+    to Mike Calder and Frank Hemer.
+  </p>
+<li>
+
+  <p> <code>ResultSet.wasNull</code> bug fixed for embedded engines.  Thanks
+    to Steve Feinstein.
+  </p>
+<li>
+
+  <p> <code>PreparedStatement.setObject</code> now handles byte[] arrays
+    correctly.  <code><font color="#803050">BINARY</font></code> fields can now be set to null.  Thanks
+    to Patrick Godeau.
+  </p>
+<li>
+
+  <p> Fixed a <code>NullPointerException</code> when dropping a column of
+    a table with no primary key.  Thanks to Jim McBeath.
+  </p>
+<li>
+
+  <p> Fixed <code><font color="#803050">LIKE</font></code> bug caused by error in implementation of
+    <code>BlockIntegerList</code>.  Thanks to Elmar Haneke.
+  </p>
+</ul>
+<br>
+<h3><a name='0.92_beta'></a>Version 0.92 beta - October 28, 2001</h3>
+<ul>
+<li>
+
+  <p> 'This is not a grouping function' error message changed to be more
+    descriptive.
+  </p>
+<li>
+
+  <p> <b>New Function</b>: <code><font color="#803050">DATEFORMAT(date, format_string)</font></code>
+  </p>
+  <p> Formats a date using the Java date formatting API available in the
+    <code>java.text</code> package.  For example,
+    <code><font color="#803050">SELECT DATEFORMAT(DATE '2001-12-25', 'EEEE')</font></code> = 'Tuesday'
+    (the day of the week of Christmas in 2001).  See the class API documentation
+    of <code>java.text.SimpleDateFormat</code> for details of the pattern format
+    'format_string'.
+  </p>
+<li>
+
+  <p> Changes made to the incremental RID list generation code because
+    non-deleted record scanning was synchronized incorrectly.
+  </p>
+<li>
+
+  <p> Grammar now accepts exponent part for numeric literals, as in
+    the example <code><font color="#803050">0.173E-2</font></code>.
+  </p>
+<li>
+
+  <p> Fixed bug that occurs when SQL functions are in <code><font color="#803050">DEFAULT</font></code> and
+    <code><font color="#803050">CHECK</font></code> clauses in <code><font color="#803050">CREATE TABLE</font></code>.  Thanks to Alan
+    Littleford.
+  </p>
+<li>
+
+  <p> Fixed constraint violation bug for updated records.  Thanks to
+    Patrick Godeau.
+  </p>
+<li>
+
+  <p> Corrected JDBC API <code>getColumnName</code> to return the column name
+    instead of an incorrect more verbose form.
+  </p>
+  <p> This may cause compatibility problems.  A method was added to
+    MckoiConnection to toggle verbose column names.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">LIKE</font></code> and <code><font color="#803050">REGEX</font></code> now handle NULL input
+    correctly.
+  </p>
+<li>
+
+  <p> Medium-high impact architectural change on core index storage system.
+  </p>
+  <p> This change was to address scalability issues from the previous
+    implementation.  Now index information is paged to disk and an index
+    update does not require a full write of the entire index to disk.  This
+    reduces operating system memory requirements significantly for large 
+    tables and should also reduce file system resources.  Additionally it
+    scales table update performance for large tables.  This change paves
+    the way for more customizable index schemes in the future such as
+    multi-column and functional.
+  </p>
+<li>
+
+  <p> Medium impact change of referential integrity conflict detection
+    code.
+  </p>
+  <p> The engine now correctly supports deferred and immediate constraint
+    checks.
+  </p>
+<li>
+
+  <p> Support for foreign key constraint checks.
+  </p>
+<li>
+
+  <p> Altering or dropping tables/constraints will now cause referential
+    integrity errors if a violation is detected.
+  </p>
+<li>
+
+  <p> Check expressions are now serializable.
+  </p>
+<li>
+
+  <p> Medium impact revision of constraint handling.
+  </p>
+  <p> Integrity constraint resolution is now handled during primitive table
+    operations to allow for efficient deferred integrity constraint checking.
+    This change caused alterations to <code>DatabaseConnection</code> and
+    <code>Transaction</code>.  Also <code>TableDataConglomerate</code> now
+    manages the internal persistent constraint tables.
+  </p>
+<li>
+
+  <p> Fixed bug that prevented defining a self referencing table in a
+    <code><font color="#803050">CREATE TABLE</font></code> query.
+  </p>
+<li>
+
+  <p> Grammar now accepts quoted deliminated identifiers of the form
+    <code><font color="#803050">"Flight"."departs"</font></code>.
+  </p>
+<li>
+
+  <p> <code>ResultSet.getString</code> method now returns an SQL-92 formatted
+    date/time/timestamp object.
+  </p>
+<li>
+
+  <p> Operator changes so <code><font color="#803050">(NULL AND TRUE) IS NULL</font></code>, <code><font color="#803050">(NULL AND FALSE) = FALSE</font></code>,
+    and <code><font color="#803050">(NULL OR TRUE) = TRUE</font></code>, <code><font color="#803050">(NULL OR FALSE) IS NULL</font></code>.
+  </p>
+<li>
+
+  <p> Building a RID list (secondary index on a column) is now
+    an incremental operation.
+  </p>
+  <p> This means the table is not locked while the index is being built and
+    read/write operations can continue to occur while the index is being built
+    in the background.
+  </p>
+<li>
+
+  <p> The SQL parser now 'compiles' to an intermediary form that is passed to the
+    interpreter.
+  </p>
+  <p> This change allows parsed statements to be cached on the server and
+    will help in implementing future query planning/optimization systems.
+  </p>
+<li>
+
+  <p> Values are now cast correctly in the <code><font color="#803050">INSERT</font></code> and <code><font color="#803050">UPDATE</font></code>
+    statements.
+  </p>
+  <p> For example, defining a <code><font color="#803050">FLOAT</font></code> column will only allow values of
+    float precision to be stored.
+  </p>
+<li>
+
+  <p> The <code><font color="#803050">CHAR</font></code> SQL type is now supported correctly.
+  </p>
+  <p> <code><font color="#803050">CHAR</font></code> is used to store strings of fixed length.  Any attempt to
+    store a string smaller than the size of a <code><font color="#803050">CHAR</font></code> field is
+    padded with whitespace to the size specified for the field.
+  </p>
+<li>
+
+  <p> Fixed a bug introduced in 0.91 on non-complex sub-queries.  Thanks to Elmar Haneke for
+    finding it.
+  </p>
+<li>
+
+  <p> Fixed a bug with accessing aliased columns by name in a <code>ResultSet</code>.
+    Thanks to Tim Pizey for help finding it.
+  </p>
+<li>
+
+  <p> JDBC driver now understands JDBC escape codes for date, time and timestamp
+    SQL types.
+  </p>
+  <p> For example, <code><font color="#803050">SELECT {d '2001-5-2'}</font></code>
+  </p>
+<li>
+
+  <p> Added SQL-92 date/time/timestamp literals to grammar.
+  </p>
+  <p> For example, <code><font color="#803050">SELECT DATE '2001-5-2', TIMESTAMP '2001-1-12 8:45:00'</font></code>
+  </p>
+<li>
+
+  <p> Changes to the SQL <code><font color="#803050">DATEOB</font></code> function to understand SQL style date
+    format (yyyy-mm-dd).
+  </p>
+<li>
+
+  <p> <code>setMaxRows(int max)</code> method implemented in <code>Statement</code> to
+    limit the number of rows in a ResultSet.
+  </p>
+</ul>
+<br>
+<h3><a name='0.91_beta'></a>Version 0.91 beta - September 6, 2001</h3>
+<ul>
+<li>
+
+  <p> Remote query time out changed to throw more intuitive error message.
+  </p>
+<li>
+
+  <p> Standard SQL-92 update and delete rules added to foreign key reference
+    grammar.
+  </p>
+<li>
+
+  <p> <code>Database.getColumns</code> now returns the correct scale
+    constraint of numbers in the <code>DECIMAL_DIGITS</code> column.
+  </p>
+<li>
+
+  <p> The <code>Statement</code> Multiple Result interface now will not confuse
+    a single celled query for an update count in the <code>getUpdateCount</code>
+    method.  This was causing problems with some database browser applications.
+  </p>
+<li>
+
+  <p> Grammar now understands <code><font color="#803050">DEFERRABLE INITIALLY DEFERRED</font></code> for
+    defining constraint deferrability.
+  </p>
+<li>
+
+  <p> SQL function <code><font color="#803050">CONCAT</font></code> now returns <code>NULL</code> for
+    <code><font color="#803050">CONCAT('a', NULL)</font></code>.
+  </p>
+<li>
+
+  <p> <code>MDatabaseMetaData.getColumns</code> fixed to handle the schema argument.
+  </p>
+<li>
+
+  <p> Specifying a non-existant schema name on the JDBC URL will now throw
+    an error.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">CREATE TABLE</font></code> can no longer create a table in a schema
+    that hasn't been created.
+  </p>
+<li>
+
+  <p> Concurrent transactions can no longer create duplicate tables.
+  </p>
+<li>
+
+  <p><code>MResultSetMetaData.getColumnLabel(column)</code> now returns only the
+    column name and not the schema/table part of the column reference.  The behaviour
+    of <code>MResultSetMetaData.getColumnName(column)</code> was not changed.
+    <code>getColumnName</code> continues to return the fully qualified column
+    reference.
+  </p>
+<li>
+
+  <p> Changes to the system tables in the <code>SYS_INFO</code> to support SQL
+    type grants, host verification and advanced user options.  Future system
+    tables also added.  Hopefully this will be the final change needed to the
+    system schema for a while.
+  </p>
+<li>
+
+  <p> <code>index_str</code> column added to <code><font color="#803050">SYS_INFO.sUSRTableColumns</font></code>
+    system table which allows access to information about the column index.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">BETWEEN</font></code> predicate and improved the indexing API to
+    better handle range searches.
+  </p>
+<li>
+
+  <p> Added <code>boot_or_create</code> variable to JDBC URL encoding which
+    if set will boot the database if it exists or create and boot if the database
+    doesn't exist.
+  </p>
+  <p> For example; <code>jdbc:mckoi:local://mydb.conf?boot_or_create=true</code>
+  </p>
+<li>
+
+  <p> Altered some error messages to be more verbose.
+  </p>
+<li>
+
+  <p> JDBCQueryTool class adapted to be easier to componentize.
+  </p>
+<li>
+
+  <p> <code>prepared_statement.setObject(n, new byte[] { ... })</code>
+    will correctly cast to a Blob SQL type.
+  </p>
+<li>
+
+  <p> Aggregate and function based tables are now cached the same way as
+    regular table data sources.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">ANY</font></code> and <code><font color="#803050">ALL</font></code> sub-query capabilities as
+    well as single cell comparison sub-query evaluation.
+  </p>
+  <p> For example, <code><font color="#803050">WHERE salery > ( SELECT avg(salery) FROM emp )</font></code>.
+    Note that <code><font color="#803050">IN</font></code> is equivalent to <code><font color="#803050">= ANY</font></code> and
+    <code><font color="#803050">NOT IN</font></code> is equivalent to <code><font color="#803050"><> ALL</font></code>.
+  </p>
+<li>
+
+  <p> Added sub-query capabilities in the <code><font color="#803050">FROM</font></code> clause of the <code><font color="#803050">SELECT</font></code> statement.
+  </p>
+  <p> For example, <code><font color="#803050">SELECT * FROM ( SELECT ... ) ...</font></code>.
+  </p>
+<li>
+
+  <p> Due to modifications to <code><font color="#803050">SELECT</font></code>, the name of columns in a
+    ResultSet may change slightly from earlier releases.  If a query uses a
+    reference that is possibly ambiguous, the fully resolved name that was
+    determined is used in the ResultSet.
+  </p>
+  <p> For example, the query <code><font color="#803050">SELECT name FROM APP.Customer</font></code> will
+    create a ResultSet with a single column named <code><font color="#803050">APP.Customer.name</font></code>.
+  </p>
+<li>
+
+  <p> The <code>getObject</code> method and other <code>getxxx</code> methods
+    in <code>ResultSet</code> were modified so that they correctly convert the
+    returned object to the appropriate Java type as required by the JDBC specification.
+  </p>
+<li>
+
+  <p> The <code>setObject</code> mechanism from <code>PreparedStatement</code> was
+    altered so that it converts Java object types to the correct internal
+    database object.
+  </p>
+  <p> For example, using <code>setObject(3, new Integer(400))</code> when the
+    database expects an int (for example, <code><font color="#803050">WHERE ? = 400</font></code>) will now
+    work as expected.  The only way to work around this issue in previous releases
+    was to make sure all numeric values were wrapped around a
+    <code>BigDecimal</code>.
+  </p>
+<li>
+
+  <p> The <code><font color="#803050">SHUTDOWN</font></code> command now results in a single celled
+    ResultSet with a value of '0' (previously returned '1').
+  </p>
+<li>
+
+  <p> Fixed memory leak which occured during the 'ConnectTest' application
+    from the test suite.
+  </p>
+  <p> The problem was that a reference from Database to every DatabaseConnection
+    was being kept even after the connection was closed thus causing a
+    memory leak.  The leak was made visible by 'ConnectTest' which opens,
+    processes a transaction, then closes a connections 120 times.
+  </p>
+<li>
+
+  <p> Fixed bug with query evaluator which failed to join tables with 0
+    entries thus causing an inefficient natural join to occur in certain
+    situations.
+  </p>
+<li>
+
+  <p> Due to a 'bug' or bad design of the Java DateFormat API implementation,
+    instances of classes derived from SimpleDataFormat are not thread safe.  To
+    work around the problem all calls to static DateFormat objects were
+    synchronized.
+  </p>
+<li>
+
+  <p> Cleaned up the engine shutdown behaviour.  Client/Server shutdown now
+    works correctly under Linux.
+  </p>
+</ul>
+<br>
+<h3><a name='0.90_beta'></a>Version 0.90 beta - May 23, 2001</h3>
+<ul>
+<li>
+
+  <p> Closing an embedded database now correctly cleans static instances to allow
+    for restarting of the database.  <code>StartStopTest</code> added to test suite.
+  </p>
+<li>
+
+  <p> Fixed problem with JDBC getXXXColumn on quoted variable names.
+  </p>
+<li>
+
+  <p> <code>MConnection</code> changed so <code>setTransactionIsolation</code>
+    method correct.
+  </p>
+<li>
+
+  <p> First version of the conglomerate (database) repair tool released.
+    The repair tool is <code>com.mckoi.tools.DBConglomerateRepairTool</code>.
+  </p>
+  <p> If a database becomes corrupt then back up the data and try using this Java
+    application to fix the data.
+  </p>
+<li>
+
+  <p> You can now add an optional initial schema name to the Mckoi JDBC URL.
+  </p>
+<li>
+
+  <p> Fixed a bug with the conglomerate state file that caused information in the
+    <i>DefaultDatabase.sf</i> file to slowly add up without being deleted when
+    the database structure was changed.
+  </p>
+<li>
+
+  <p> <b>New Function</b>: <code><font color="#803050">COUNT(DISTINCT <i>[expression_list]</i>)</font></code>
+  </p>
+<li>
+
+  <p> The internal expression string was changed to represent the non-escaped
+    version of the string literal so the expression string can be correctly
+    re-parsed later if desired.  This change will in some cases affect the label
+    and name of columns returned by ResultSetMetaData.
+  </p>
+<li>
+
+  <p> Grammar changed so '' (double apostrophe) is treated as a single apostrophe in string literals.  For
+    example, <code><font color="#803050">SELECT 'Toby''s Fix'</font></code>.
+  </p>
+<li>
+
+  <p> Fixed a caching bug in <code>FunctionTable</code> that caused errors in
+    function tables in excess of 1024 columns or 2,000,000 rows.
+  </p>
+<li>
+
+  <p> The <code><font color="#803050">CREATE</font></code>, <code><font color="#803050">ALTER</font></code>, and <code><font color="#803050">DROP</font></code> SQL
+    commands now return a result set containing '0' if the operation was
+    successful.  Previously they return values > 0 depending on the function.
+  </p>
+<li>
+
+  <p> Fixed bug that caused a query to time-out earlier than it should have
+    when a connection was saturated with new statement requests.
+  </p>
+<li>
+
+  <p> <b>New Function</b>: <code><font color="#803050">IF(<i>[condition expression]</i>, <i>[true expression]</i>, <i>[false expression]</i>)</font></code>
+  </p>
+<li>
+
+  <p> An internally generated <code>SYS_INFO.sUSRTableColumns</code> table
+    added which allows production of queries on the entire database schema.
+  </p>
+<li>
+
+  <p> Several new system tables were added to the SYS_INFO schema including
+    a number of important referential integrity and constraint tables.
+  </p>
+  <p> The referential integrity and constriant tables keep data on which
+    columns are unique and primary key, any check constraints, and foreign key
+    references.
+  </p>
+<li>
+
+  <p> Schema information and other system tables have moved to the (now
+    read-only) SYS_INFO schema.
+  </p>
+<li>
+
+  <p> The engine now supports the ability to manage multiple schema.
+  </p>
+  <p> This change will allow for better separation of groups of tables and
+    allow the ability to define referential constraints within a schema.  The
+    change required revision of the <code>Transaction</code> and
+    <code>DatabaseConnection</code> API as well as some other classes.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">SET SCHEMA [schema name]</font></code> command to switch between
+    different schema.
+  </p>
+<li>
+
+  <p> Improved performance of table creation and reduced memory utilization
+    of small tables.  Since tables are to become a useful tool to the engine
+    itself this was necessary.
+  </p>
+<li>
+
+  <p> Behaviour of 'auto-commit' mode changed slightly so if an error occurs
+    during query evaluation then an auto roll-back occurs instead of an auto commit.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">CREATE TABLE</font></code> syntax improved to handle primary keys,
+    multiple foreign keys and unique constraints.
+  </p>
+<li>
+
+  <p> JDBC <code>getColumnxxx</code> methods will now search on [column_name],
+    [table_name.column_name] as well as the fully declared name [schema_name.table_name.column_name].
+  </p>
+  <p> For example, <code><font color="#803050">SELECT * FROM Table</font></code> then <code>result.getString("my_col")</code>
+    is equivalent to <code>result.getString("Table.my_col")</code> and
+    <code>result.getString("MySchema.Table.my_col")</code>.
+  </p>
+<li>
+
+  <p> The mckoidb.jar manifest file now includes a <code>Class-Path</code>
+    directive that will include any regular expression libraries found at the
+    launch directory/URL.
+  </p>
+<li>
+
+  <p> Fixed bug when using aggregate functions on an empty table
+    (eg. <code><font color="#803050">SELECT COUNT(*) FROM Table WHERE false</font></code>) that previously
+    returned an empty result.  Now it correctly evaluates the result of the
+    aggregate function for an empty set.
+  </p>
+<li>
+
+  <p> Added additional variables to <code><font color="#803050">SHOW STATUS</font></code> to list some
+    important Java runtime information the engine is being run on.
+  </p>
+<li>
+
+  <p> Various minor rearrangement and alteration of the source tree to ease a
+    port of the engine to the Java 1.1 environment.
+  </p>
+</ul>
+<br>
+<h3><a name='0.89_beta'></a>Version 0.89 beta - February 25, 2001</h3>
+<ul>
+<li>
+
+  <p> Fixed bug with <code>com.mckoi.runtime.McKoiDBMain</code> command line
+    and the '-create' switch.
+  </p>
+<li>
+
+  <p> Trigger support added back in to engine.
+  </p>
+  <p> Triggers are only fired when a transaction is committed.  A connection
+    will not see a trigger event unless it either doesn't have a transaction
+    open or when the open transaction is closed (via commit or rollback).
+  </p>
+<li>
+
+  <p> As part of object/relational enhancements, added the ability to
+    construct new objects remotely in the database via <code><font color="#803050">new</font></code>.
+  </p>
+  <p> For example, <code><font color="#803050">SELECT new java.awt.Point(x, y) FROM Coordinates</font></code> or
+    <code><font color="#803050">INSERT INTO Address (url) VALUES (new java.net.URL('http://www.mckoi.com/database'))</font></code>.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">HEXTOBINARY</font></code> and <code><font color="#803050">BINARYTOHEX</font></code> functions added.
+  </p>
+  <p> These are binary functions and convert between hex strings and binary (byte) data
+    types.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">JAVA_OBJECT</font></code> SQL type for storing serialized Java objects as an
+    experimental feature and a start for adding object capabilities to the engine.
+  </p>
+  <p> An example; <code><font color="#803050">CREATE TABLE ObjTable ( col1 JAVA_OBJECT(java.awt.Point) )</font></code>.  Now
+    Java objects can be stored in the table via <code><font color="#803050">INSERT INTO ObjTable ( col1 ) VALUES ( ? )</font></code>
+    and by calling <code>setObject(1, new Point(10, 10))</code> on the prepared statement.
+  </p>
+<li>
+
+  <p> Out of bounds SQL error returned from the <code>get...</code> methods in ResultSet if
+    the column index is in error.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">CREATE [UNIQUE] INDEX ...</font></code> and <code><font color="#803050">DROP INDEX ...</font></code> statements added to the
+    grammar.  Currently they are no-operation.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">INT</font></code> SQL type is now an alias for <code><font color="#803050">INTEGER</font></code>.
+  </p>
+<li>
+
+  <p> Table names can now be quoted.  eg. <code><font color="#803050">SELECT * FROM "DATE" WHERE "DATE.time" IS NOT NULL</font></code>.
+  </p>
+<li>
+
+  <p> Fixed string escape code error with <code><font color="#803050">INSERT INTO TEST(TEST1,TEST2) VALUES('Test\\','Test2')</font></code>.
+  </p>
+<li>
+
+  <p> Mckoi JDBC URL now accepts the form 'jdbc:mckoi: ....' without the ':' prefix.
+  </p>
+<li>
+
+  <p> <code>com.mckoi.JDBCDriver</code> now extends <code>com.mckoi.database.jdbc.MDriver</code>
+    so that a developer may directly create an instance of the Mckoi JDBC driver class
+    bypassing DriverManager.  It appears that the JDBC specification implies that you need to
+    do this.
+  </p>
+<li>
+
+  <p> <code>com.mckoi.database.jdbc.MDatabaseMetaData</code> and <code>MResultSetMetaData</code>
+    are now public to allow third party tools to introspect instances using the reflection API.
+  </p>
+<li>
+
+  <p> JDBC API Additions.
+  </p>
+  <p> Completed all 'not implemented' methods in ResultSetMetaData and DatabaseMetaData.  Some
+    of the implementations are thin shells that should be improved upon in the future.
+  </p>
+<li>
+
+  <p> Workaround for an issue with the <code><font color="#803050">UNIQUEKEY</font></code> function that caused an auto-
+    commit connection to keep the transaction alive.  We need a better fix for this function.
+    Possibly we should make it so it's not transaction dependent.
+  </p>
+</ul>
+<br>
+<h3><a name='0.88b_beta'></a>Version 0.88b beta - December 16, 2000</h3>
+<ul>
+<li>
+
+  <p> Caching improvements on the JDBC client to shorten long term memory usage and to
+    more quickly free server side resources.
+  </p>
+<li>
+
+  <p> Code profiled and performance improved for reading tables with a large numbers
+    of columns.
+  </p>
+<li>
+
+  <p> <b>FIX:</b> Bug with transaction journal entry corruption under specific conditions.
+  </p>
+<li>
+
+  <p> <code>liveCopyTo(File path)</code> added to TableDataConglomerate that can be used
+    to make a copy of the data while the database is live.
+  </p>
+  <p> Written so we can make a service that backs up the database without shutting the
+    system down.  While the 'liveCopyTo' method is executing, all commit attempts will
+    block.  Limited database reads are still permitted, but in practice the client will
+    see choppy performance while a backup is happening.
+  </p>
+<li>
+
+  <p> Added a database file lock that prevents a database from being opened for write
+    by multiple JVMs.
+  </p>
+<li>
+
+  <p> Fixed bug with conglomerate clean up that would cause an error if the result
+    set was open on a dropped table after the table was deleted from the file system.
+  </p>
+</ul>
+<br>
+<h3><a name='0.88_beta'></a>Version 0.88 beta - December 10, 2000</h3>
+<ul>
+<li>
+
+  <p> New <code><font color="#803050">SHOW</font></code> - <code><font color="#803050">SHOW CONNECTION_INFO</font></code>.  Shows information
+   about the connection the statement was evaluated in.
+  </p>
+<li>
+
+  <p> New command <code><font color="#803050">COMPACT TABLE</font></code>.  Compacts the size of a database table
+   in the file system.  This command is transaction sensitive and must be committed
+   before taking effect.  See the documentation for more information.
+  </p>
+<li>
+
+  <p> Added a 'switch to connection [connection name];' commands to JDBCScriptTool
+   that will tell the tool to execute the next commands on a different connection.
+  </p>
+  <p> This change is for writing scripts to test concurrent transaction
+   sequences.
+  </p>
+<li>
+
+  <p> Added an optional <code><font color="#803050">INDEX_BLIST</font></code> and <code><font color="#803050">INDEX_NONE</font></code> flag
+   when defining a column.  This informs the engine whether the column is to be
+   indexed or not.
+  </p>
+<li>
+
+  <p> DataCellCache is now a prime number in size to improve hashing algorithm.
+  </p>
+  <p> Tests and a look at the heap dump shows this is an effective way
+   of hashing the cache and reduces memory useage slightly.
+  </p>
+<li>
+
+  <p> Fix for <code>ResultSetMetaData.getColumnType(column)</code> which previously
+   returned a generically assigned type.
+  </p>
+<li>
+
+  <p> SQL-92 <code><font color="#803050">TRIM</font></code> function added.
+  </p>
+  <p> For example, <code><font color="#803050">SELECT TRIM(TRAILING 'a' FROM 'aaabgggaaa')</font></code> will result
+   in '<code>aaabggg</code>'.
+  </p>
+<li>
+
+  <p> Local users can now make multiple connections to a database running
+   locally.
+  </p>
+<li>
+
+  <p> Minor bug fixed with busy connection handshaking causing non-fatal exception.
+  </p>
+<li>
+
+  <p> Added a <code><font color="#803050">SET</font></code> command to the grammar for setting runtime variables
+   on the current connection.
+  </p>
+<li>
+
+  <p> Multi-threadedness inside a transaction now inherits the locking semantics that
+   pre version 0.88 used for the entire database.
+  </p>
+  <p> That is, a write operation must aquire an exclusive lock over a table.  A read
+   operation aquires a shared lock.  Altering, creating and dropping tables requires
+   an exclusive lock over the entire transaction.  NOTE: Concurrent transactions only
+   lock over a <code><font color="#803050">COMMIT</font></code> or <code><font color="#803050">ROLLBACK</font></code> or the start of a
+   transaction.
+  </p>
+<li>
+
+  <p> Transaction isolation level SERIALIZABLE is now supported.
+  </p>
+  <p> <code><font color="#803050">COMMIT</font></code> and <code><font color="#803050">ROLLBACK</font></code> SQL commands are now handled by the
+   interpreter.  <code><font color="#803050">SET AUTOCOMMIT ON | OFF</font></code> will switch auto commit mode.
+   Transaction support required a major overhaul of the core file IO and primitive
+   file operations.
+  </p>
+<li>
+
+  <p> Various usability improvements to the <code>com.mckoi.tools.JDBCQueryTool</code>
+   tool.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">REGEX</font></code> operator now accepts a complete expression on the RHS.
+    <code><font color="#803050">SELECT * FROM Files WHERE content REGEX ?</font></code> is now valid.
+  </p>
+</ul>
+<br>
+<h3><a name='0.87_beta'></a>Version 0.87 beta - November 12, 2000</h3>
+<ul>
+<li>
+
+  <p> JDBC API additions.
+  </p>
+  <p> In DatabaseMetaData, getDatabaseProductName(), getDatabaseProductVersion(), getUserName(),
+  isReadOnly() methods implemented.
+  </p>
+<li>
+
+  <p> The <code><font color="#803050">SHOW</font></code> statement now has an optional <code><font color="#803050">WHERE</font></code>
+   clause.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">SHOW CONNECTIONS</font></code>.  Shows a snapshot of current
+   connections to the database.
+  </p>
+<li>
+
+  <p> Fixed a bug in the lock debugging code that caused an error to be
+   thrown under busy write situations.  'table_lock_check' configuration
+   property now works as advertised.
+  </p>
+<li>
+
+  <p> All string transfer is now as a char[] array due to limitations
+   with UTF-8.  It's too difficult to determine how large a UTF-8 format
+   string will be and the UTF-8 protocol has a size limitation of 64k.
+  </p>
+  <p> If the JDBC client/server communication protocol uses too much
+   bandwidth then we need to look into using a general compression
+   algorithm for reducing this traffic.
+  </p>
+<li>
+
+  <p> Completed <code><font color="#803050">DESCRIBE [table name]</font></code> command.</p>
+  <p> This command provides information about the columns of the table.
+  </p>
+<li>
+
+  <p> SQL-92 style <code><font color="#803050">ALTER</font></code> syntax has been added.  See documentation 
+   for details. </p>
+<li>
+
+  <p> Added a regular expression literal used only for the REGEX operator.
+   The new grammar will be familiar to Perl users.
+  </p>
+  <p> Some examples; <code><font color="#803050">SELECT 'abba' REGEX /ABb./i</font></code> is a case
+   insensitive search and returns true in this case.  <code><font color="#803050">SELECT content FROM
+   Files WHERE content REGEX /.*harry.*/i</font></code> searches for the string 'harry'
+   somewhere in the 'content' column of the Files table.  <code><font color="#803050">SELECT content
+   FROM Files WHERE content REGEX /.*harry.*/i = false</font></code> finds all Files
+   that do not have the string 'harry' in the content column.
+  </p>
+<li>
+
+  <p> SQL grammar now accepts <code>NULL</code> literal.
+  </p>
+  <p> <code><font color="#803050">SELECT * FROM Table WHERE Column <> NULL</font></code> is 
+   equivalent to <code><font color="#803050">SELECT * FROM Table WHERE Column IS NOT NULL</font></code>.
+   Another example, <code><font color="#803050">SELECT 9 / 0 = NULL</font></code> returns true.
+  </p>
+<li>
+
+  <p> Recovery mechanism after an unexpected shutdown has been changed so it now
+   only reindexes a table at the next boot if there are any modifications that haven't
+   been checked in.
+  </p>
+  <p> The old behaviour was that all tables were reindexed if the database was  
+   not properly shut down.  Now, only tables that have unchecked modifications are
+   rebuilt.  This change improves boot up times for when shutdown wasn't called.
+   The old behaviour is still available if the 'always_reindex_dirty_tables'
+   configuration property is enabled (disabled by default).
+  </p>
+<li>
+
+  <p> Added static <code>quote(String)</code> method to <code>com.mckoi.database.jdbc.MckoiConnection</code>
+   class.  This will convert a Java string to a quoted SQL string to be used as an expression
+   in an SQL statement.
+  </p>
+<li>
+
+  <p> Changed so any properties passed through the
+   <code>java.sql.DriverManager.getConnection(url, properties)</code> method are
+   treated as overridden properties in the configuration file for a local database.
+  </p>
+<li>
+
+  <p> The <code>:jdbc:mckoi:local://</code> URL encoding has been extended to allow any
+   configuration property to be overridden inside the URL.
+  </p>
+  <p> For example, <code>:jdbc:mckoi:local://conf.db?database_path=/home/db/datadir&lookup_comparison_list=disabled</code>
+   will boot a local database with the database path at '/home/db/datadir' and the
+   'lookup_comparison_list' property disabled.  Note that a database can still be
+   created by including 'create=true' in the JDBC URL variable encoding. 
+  </p>
+<li>
+
+  <p> Added a <code>-C[key]=[value]</code> switch to the Mckoi server application that allows
+   any property in the configuration file to be overridden on the command line.  See
+   <code>java -jar mckoidb.jar -h</code> for command line help.
+  </p>
+<li>
+
+  <p> The internal <code><font color="#803050">length</font></code> SQL function now handles binary columns.
+  </p>
+<li>
+
+  <p> 'lookup_comparison_list' configuration property bug and Blob bug fixed.  Neither
+   worked as advertised.
+  </p>
+<li>
+
+  <p> Changes to table add/remove row behaviour and column index management.
+  </p>
+  <p> Now, 30 seconds after the last table modification, table relational and modification data
+   are flushed to the file system.  Column indices are no longer read into memory as part of the
+   boot up procedure.  Instead they are loaded as needed on the first request to the table.
+   This means the engine boots faster and requires less memory at the start.  First query times
+   are lengthened however.
+  </p>
+<li>
+
+  <p> Added memory optimization 'soft_index_storage' configuration property.
+  </p>
+  <p> This property will reduce the memory requirements of the engine by keeping all
+   column indices behind a soft reference.  This means the JVM Garbage Collector can
+   reclaim memory used by indices.  If an index is needed after it has been reclaimed,
+   then it is reloaded from the file system.  Enabling this property will lower
+   performance and raise the amount of memory available on the heap to any other
+   applications running within the same JVM.  Ideal for a very low memory footprint
+   local database.
+  </p>
+<li>
+
+  <p> Added <code>-dbpath</code>, <code>-logpath</code> and <code>-jdbcport</code> switches to
+   the Mckoi server command line program (com.mckoi.runtime.McKoiDBMain).
+  </p>
+  <p> These options will override variables set in the configuration file and set the
+   database log and data file path.  The 'jdbcport' switch allows for the TCP port to be
+   set.
+  </p>
+</ul>
+<br>
+<h3><a name='0.86_beta'></a>Version 0.86 beta - October 15, 2000</h3>
+<ul>
+<li>
+
+  <p> Added trigger demonstration to the 'demo' directory.
+  </p>
+<li>
+
+  <p> Fixed bug with <code><font color="#803050">INSERT INTO ATable ( my_column ) SELECT my_column FROM ATable</font></code>
+    that previously caused an infinite loop.
+  </p>
+<li>
+
+  <p> Removed 'tools.jar' from the distribution because I felt it was un-necessary.  All
+    the development tools are in 'mckoidb.jar'.
+  </p>
+<li>
+
+  <p> The GPL license is not compatible with the Apache Jakarta Regexp library so I have
+    removed it from the distribution.
+  </p>
+  <p> The GNU LGPL regular expression library is shipped instead, including the source
+    code.  There is now an interface for bridging to any regular expression library.  See
+    the 'com.mckoi.database.RegexLibrary' interface.  Note that a regular expression
+    library is only needed if the REGEX operator is used in a search expression.  For
+    example, <code><font color="#803050">SELECT number FROM Part WHERE number REGEX '[a-z]+[0-9]*';</font></code>.
+    The database will happily operate without a regular expression library (provided
+    it doesn't encounter the REGEX operator).
+  </p>
+<li>
+
+  <p> New connections on the server will no longer make a call to
+    'InetAddress.getHostName()'.  This method performs a reverse DNS lookup on
+    the connecting IP address that can cause long delays if DNS has not been set
+    up on the server.
+  </p>
+<li>
+
+  <p> <b>FIX:</b> Dropped tables are now deleted from the filesystem.
+  </p>
+<li>
+
+  <p> Triggers added.  Triggers are an experimental feature.
+    Please report any bugs you find with them.
+  </p>
+  <p> A trigger is added with a <code><font color="#803050">CREATE TRIGGER trigger_name [ UPDATE |
+    INSERT | DELETE ] ON table_name</font></code> SQL command.  There is a demonstration
+    of using triggers in the 'demo' directory.
+  </p>
+<li>
+
+  <p> DataTable's now stay live after a Database.shutdown.  Any server side
+    references to an instance of a Table is no longer invalidated over a shutdown/init.
+  </p>
+  <p> The primary importance of this fix is that we can shutdown the database,
+    perform some maintenance on the data (backing up, etc), re-initialize the engine
+    and any Table references created are NOT invalidated.  After the database is
+    initialized after the shutdown, the system will perform as normal and will even
+    be able to continue downloading result sets in progress from before the
+    shutdown.
+  </p>
+<li>
+
+  <p> Strings >64k in length are no longer transferred as UTF-8.  UTF-8 has a 64k
+    size limitation so we have to transfer large strings as a char array.
+  </p>
+  <p> Note that UTF-8 is a compression format for unicode strings.  Serializing
+    strings as a char array will (for the English ASCII character set) double
+    bandwidth usage.  Perhaps we need to implement a variant of UTF for
+    large strings.
+  </p>
+<li>
+
+  <p> <code>ResultSet.wasNull()</code> implemented properly.  The primitive type
+    <code>getxxx</code> methods in ResultSet now work as specified in JDBC for
+    null values.
+  </p>
+<li>
+
+  <p> BLOBs can now be stored and retrieved.
+  </p>
+  <p> A Blob has a theoretical size limitation of 2 gigabytes but in practice
+    this limitation is much lower.  A Blob must fit entirely in memory both on
+    the client and on the server.  So for all practical purposes, Blob's should
+    be no larger than a few megabytes.  Additionally, it is not possible to
+    search against a binary column.  This is on purpose - how would you cast
+    binary data to a type that could be queried against?
+  </p>
+</ul>
+<br>
+<h3><a name='0.85_beta'></a>Version 0.85 beta - September 23, 2000</h3>
+<ul>
+<li>
+
+  <p> Fixed bug with <code><font color="#803050">SELECT Customer.*, Flight.number</font></code> where the column
+    selected after a glob would not appear in the result.
+  </p>
+<li>
+
+  <p> Added com.mckoi.tools.JDBCScriptTool, a command line driven SQL scripting tool
+    for debugging, diagnostics and regression testing.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">LEFT [OUTER] JOIN</font></code>, <code><font color="#803050">RIGHT [OUTER] JOIN</font></code> and
+    <code><font color="#803050">[INNER] JOIN</font></code> joining operators in the <code><font color="#803050">FROM</font></code> clause.
+  </p>
+  <p> The current implementation performs all outer joins first, then evaluates
+    the where clause and performs any inner joins.  Performance looks good from
+    some tests on common uses.  Perhaps we need to look into revising and updating the
+    search expression evaluation system so outer joins can be optimized better with
+    the rest of the clauses.
+  </p>
+<li>
+
+  <p> Changed RawTableInformation and added a RootTable interface to allow for
+    more flexibility when defining the lowest layer tables in a hierarchy.
+  </p>
+<li>
+
+  <p> <code><font color="#803050">AVG</font></code> and <code><font color="#803050">SUM</font></code> aggregate functions now handle NULL
+    input safely.  If the group contains a NULL value, then the result is NULL.
+    Changes were made to the other internal functions so they safely handle
+    NULL input. 
+  </p>
+<li>
+
+  <p> SQLException can now be thrown in the middle of fetching a ResultSet
+    block if the data is in error. 
+  </p>
+<li>
+
+  <p> Fixed bug that allowed ambiguous table declarations in the <code><font color="#803050">FROM</font></code>
+    clause of the <code><font color="#803050">SELECT</font></code> statement.
+  </p>
+<li>
+
+  <p> The configuration property 'function_factories' can now register any number
+    of user definable function factories.  This allows for custom written function
+    libraries to be plugged into the SQL engine.
+  </p>
+  <p> See com.mckoi.database.FunctionFactory for the API to write custom
+    SQL functions.  For reference, all internal functions are defined in the
+    com.mckoi.database.InternalFunctionFactory class.
+  </p>
+<li>
+
+  <p> <b>FIX:</b> Escape codes \n, \t, \', \\ now work in string literals.
+  </p>
+<li>
+
+  <p> <b>FIX:</b> <code><font color="#803050">NOT LIKE</font></code> now fully functional.
+  </p>
+<li>
+
+  <p> Added support for read only databases.  Log files can now be disabled, and
+    a new 'read_only' property was added to the database configuration file.</p>
+  <p> Now database data files can be stored on read-only media such as a CD.
+  </p>
+<li>
+
+  <p> Fixed a potential problem with User and Database.shutdown()/.init().  Also fixed
+    a related but more obscure problem with JDBCDatabaseInterface.
+  </p>
+  <p> User held a reference to the priv tables, but all Table objects are currently
+    invalidated when Database.shutdown() is issued.  A User object can be live over a
+    .shutdown(), therefore the User would end up undefined after a shutdown.  A similar
+    problem was found with JDBCDatabaseInterface if a table lock was held over a
+    shut down/init.  Now, if you execute a query and are reading a result set over when
+    the database shuts down, the result set will throw an SQLException after the
+    database initializes.  This still isn't perfect behaviour, but it's better than
+    before where the connection would lock up.  Added a TODO entry for keeping
+    DataTable objects live to solve this issue entirely.
+  </p>
+<li>
+
+  <p> Added <code><font color="#803050">TONUMBER</font></code> internal SQL function that casts an expression to
+    a number.
+  </p>
+  <p> This comes in particularly useful for changing a date to the number of
+    milliseconds since Jan 1st, 1970.
+  </p>
+<li>
+
+  <p> Fixed <code><font color="#803050">IS NOT NULL</font></code> error in expression grammar.
+  </p>
+<li>
+
+  <p> Added 'socket_polling_frequency' property to configuration file.
+  </p>
+  <p> This changes the time in milliseconds between each poll of the 'available' method of
+    input connections.  This can be tweaked for different VM implementations.
+  </p>
+<li>
+
+  <p> JDBC Driver now correctly returns a native Java 'null' for null results.
+  </p>
+  <p> Previously the driver returned an instance of <code>global.NullObject</code>.
+  </p>
+</ul>
+<table width="100%" cellspacing="5"><tr><td><hr size="1">
+<div align="left"><font size=-1>Last Updated: Mon Aug 16 00:27:18 PDT 2004<br></font></div>
+<div align="left"><font size=-1>Mckoi SQL Database Copyright &copy; 2000 - 2004 Diehl and Associates, Inc.  All rights reserved.<br></font></div>
+<br>
+</td></tr></table></BODY></HTML>
