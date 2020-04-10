@@ -17,7 +17,7 @@ public class Add {
         System.out.print("\n\nPlease choose what you would like to add to the Database:" +
                 "\n1. Officer" +
                 "\n2. Assignment" +
-                "\n3. Rank" +
+                "\n3. Rank (Role)" +
                 "\nEnter choice: ");
 
         switch(reader.nextInt()){
@@ -37,23 +37,22 @@ public class Add {
 
     public static void addCrew() throws SQLException {
 
-        System.out.println("\nYou have chosen to recruit a new officer to the USS Corsar!" +
+        System.out.println("\nYou have chosen to recruit a new officer to the USS Corsair!" +
                 " This requires an Crew ID, Name, and Rank ID");
 
-        System.out.print("\nPlease enter a unique Student ID: ");
+        System.out.print("\nPlease enter a unique Crew ID: ");
         int cid = reader.nextInt();
         reader.nextLine();
 
-        System.out.print("\nEnter Student Name: ");
+        System.out.print("\nEnter Crew Name: ");
         String name = reader.nextLine();
 
 
-        System.out.print("\nEnter an existing Major ID: ");
-        int rid = reader.nextInt();
+       // System.out.print("\nEnter an existing Rank ID: ");
+        //int rid = reader.nextInt();
 
 
         //This does not take care of rank. That must be done separately
-        Statement statement = connection.createStatement();
         try {
             result = statement.executeQuery("INSERT INTO Crew(id, name) VALUES " +
                     "(" + cid + ", '" + name  + ")"
@@ -63,69 +62,70 @@ public class Add {
 
             //double check query
             //This is to add the rank
-            result = statement.executeQuery("INSERT INTO Ranking(cid, rid) VALUES " +
+           /* result = statement.executeQuery("INSERT INTO Ranking(cid, rid) VALUES " +
                     "(" + cid + ", " + rid + ")"
             );
 
             //get title name to print out
             result = statement.executeQuery("SELECT title FROM Rank WHERE id = " + rid);
+            */
         }
         catch(SQLException e){
-            System.out.println("There was an issue adding student");
+            System.out.println("There was an issue adding officer");
         }
 
     }
 
     public static void addPost() throws SQLException {
 
-        System.out.println("\nYou have chosen to add a new course! This requires a Course ID and Course Description");
+        System.out.println("\nYou have chosen to add a new Assignment! This requires a Post ID and Title");
 
-        System.out.print("\nPlease enter a unique Course ID: ");
-        int id = reader.nextInt();
+        System.out.print("\nPlease enter a unique Post ID: ");
+        int pid = reader.nextInt();
         reader.nextLine();
 
-        System.out.print("\nEnter Course Description: ");
-        String desc = reader.nextLine();
+        System.out.print("\nEnter Assignment Title: ");
+        String title = reader.nextLine();
 
 
         Statement statement = connection.createStatement();
         try {
             result = statement.executeQuery(
-                    "INSERT INTO Course(courseId, courseDesc) VALUES " +
-                            "(" + id + ", '" + desc + "')"
+                    "INSERT INTO Post(id, title) VALUES " +
+                            "(" + pid + ", '" + title + "')"
             );
 
-            System.out.println(desc + " has been added!");
+            System.out.println(title + " has been added!");
         }
         catch(SQLException e){
-            System.out.println("There was an issue adding course");
+            System.out.println("There was an issue adding Assignment");
         }
 
     }
 
     public static void addRank() throws SQLException {
 
-        System.out.println("\nYou have chosen to add a new major! This requires a Major ID and Major Description");
+        System.out.println("\nYou have chosen to add a new Rank! This requires a Rank ID and Title");
 
-        System.out.print("\nPlease enter a unique Major ID: ");
-        int id = reader.nextInt();
+        System.out.print("\nPlease enter a unique Rank ID: ");
+        int rid = reader.nextInt();
         reader.nextLine();
 
         System.out.print("\nEnter Major Description: ");
-        String desc = reader.nextLine();
+        String title = reader.nextLine();
 
 
         Statement statement = connection.createStatement();
         try {
             result = statement.executeQuery(
-                    "INSERT INTO Major(majorId, majorDesc) VALUES " +
-                            "(" + id + ", '" + desc + "')"
+                    "INSERT INTO Rank(id, title) VALUES " +
+                            "(" + rid + ", '" + title + "')"
             );
 
-            System.out.println(desc + " has been added!");
+            System.out.println(title + " has been added!");
         }
         catch(SQLException e){
-            System.out.println("There was an issue adding major");
+            System.out.println("There was an issue adding rank");
         }
 
     }
