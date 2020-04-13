@@ -14,6 +14,7 @@ public class Main {
     static Add add;
     static Enlist enlist;
     static UpRank upRank;
+    static Delete delete;
 
 
     public Main() {
@@ -90,11 +91,13 @@ public class Main {
                 add.main();
                 break;
             case 4:
-                enlist.main();
+                delete.main();
                 break;
             case 5:
                 enlist.main();
+                break;
             case 6:
+                upRank.main();
                 break;
             case 7:
                 System.out.println("\n\nThank you for choosing Spockbot! Live Long and Prosper!");

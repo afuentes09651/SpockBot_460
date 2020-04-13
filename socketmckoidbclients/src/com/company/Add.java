@@ -47,12 +47,13 @@ public class Add {
         System.out.print("\nEnter Crew Name: ");
         String name = reader.nextLine();
 
-        //replace spaces with underscores
-        //name = name.replaceAll(" ","_");
+        //item for crew rankid is going to be used in a separate query to the rank database
+        System.out.print("\nEnter new Crew's Rank ID: ");
+        String rid = reader.nextLine();
 
-
-        // System.out.print("\nEnter an existing Rank ID: ");
-        //int rid = reader.nextInt();
+        //item for crew postid is going to be used in a separate query to the job database
+        System.out.print("\nEnter new Crew's Post ID: ");
+        String pid = reader.nextLine();
 
 
         //This does not take care of rank. That must be done separately
@@ -63,21 +64,43 @@ public class Add {
 
             System.out.println("Officer " + name + " has been added!");
 
-            //double check query
-            //This is to add the rank
-           /* result = statement.executeQuery("INSERT INTO Ranking(cid, rid) VALUES " +
-                    "(" + cid + ", " + rid + ")"
-            );
 
-            //get title name to print out
-            result = statement.executeQuery("SELECT title FROM Rank WHERE id = " + rid);
-            */
         }
         catch(SQLException e){
             e.printStackTrace();
 
             System.out.println("There was an issue adding officer");
         }
+
+        //this query takes care of rank
+        try {
+            result = statement.executeQuery("INSERT INTO Ranking (cid, rid) VALUES " +
+                    "('" + cid + "', '" + rid  + "')"
+            );
+
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+
+            System.out.println("There was an issue adding the officer's rank");
+        }
+
+        /*
+        //this query takes care of Job
+        try {
+            result = statement.executeQuery("INSERT INTO Job (cid, pid) VALUES " +
+                    "('" + cid + "', '" + pid  + "')"
+            );
+
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+
+            System.out.println("There was an issue adding the officer's job");
+        }*/
+
 
     }
 
