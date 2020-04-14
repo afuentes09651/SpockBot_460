@@ -93,14 +93,13 @@ public static void main() throws SQLException {
         //Crew with a given Rank
         public static void promptFour() throws SQLException {
 
-            result = statement.executeQuery("SELECT * FROM Rank");
 
             System.out.println("\nPlease choose from the following ranks: \n");
-            while(result.next()){
-                System.out.println(result.getString(1) + "\t" + result.getString(2));
-            }
+
+            promptThree(); //list all Ranks and IDs
+
             reader.nextLine();
-            System.out.print("\nEnter major ID: ");
+            System.out.print("\nEnter Rank ID: ");
 
             int rank = reader.nextInt();
 

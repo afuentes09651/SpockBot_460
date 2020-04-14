@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eecb7-4cb4-4450-867a-4150ef1aad2d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/124APP_Enrolled.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/124APP_Enrolled.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/125APP_Course.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/125APP_Course.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/126APP_Major.koi" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/data/126APP_Major.koi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/data/jnl14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketdb/log/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../socketdb/log/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socketmckoidbclients/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/listAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/listAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
