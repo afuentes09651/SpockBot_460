@@ -100,6 +100,7 @@ public class Main {
                 upRank.main();
                 break;
             case 7:
+                connection.close();
                 System.out.println("\n\nThank you for choosing Spockbot! Live Long and Prosper!");
                 break;
             default:

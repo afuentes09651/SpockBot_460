@@ -3001,3 +3001,26 @@ Was expecting one of:
 % Dropped: 089APP_Enrolled
 % Dropped: 090APP_Course
 % Dropped: 091APP_Major
+**** Debug log started: Tue Apr 14 12:12:20 CDT 2020 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: gnu.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: /Users/armandez/Documents/UL CMPS Curriculum/CMPS 460/SpockBot_460/socketdb/./data/DefaultDatabase.lock
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Couldn't change to 'BedrockU.conf' schema.
