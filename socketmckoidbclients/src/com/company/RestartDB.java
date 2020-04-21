@@ -100,7 +100,7 @@ public class RestartDB {
             //Create Users table
             statement.executeQuery(
                     "CREATE TABLE Users " +
-                            "(id INTEGER PRIMARY KEY, user VARCHAR(25), pass VARCHAR(100), permission INTEGER)");
+                            "(userId VARCHAR(25) PRIMARY KEY, pass VARCHAR(100), permission INTEGER)");
 
             //insert default user info and levels, in SHA256 hash
 
@@ -120,20 +120,18 @@ public class RestartDB {
 
 
 
-            /*statement.executeQuery(
-                    "INSERT INTO Users (user, pass, permission) VALUES " +
-                            "(" + "Captain" + ", " + passwordHash[0] + ", " + 0 + ")");
             statement.executeQuery(
-                    "INSERT INTO Users (user, pass, permission) VALUES " +
-                            "(" + "Commander" + ", " + passwordHash[1] + ", " + 1 + ")");
+                    "INSERT INTO Users (userId, pass, permission) VALUES " +
+                            "('" + "Captain" + "', '" + passwordHash[0] + "', '" + 0 + "')");
             statement.executeQuery(
-                    "INSERT INTO Users (user, pass, permission) VALUES " +
-                            "(" + "Ensign" + ", " + passwordHash[2] + ", " + 2 + ")");
+                    "INSERT INTO Users (userId, pass, permission) VALUES " +
+                            "('" + "Commander" + "', '" + passwordHash[1] + "', '" + 1 + "')");
+            statement.executeQuery(
+                    "INSERT INTO Users (userId, pass, permission) VALUES " +
+                            "('" + "Ensign" + "', '" + passwordHash[2] + "', '" + 2 + "')");
 
-            System.out.println("WOOOOOOOOOOOO");
 
-            result = statement.executeQuery("SELECT * FROM Users");
-            System.out.println(result.getString(1));*/
+
 
             System.out.println("Ranking Table has been created");
 

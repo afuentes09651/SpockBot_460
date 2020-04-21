@@ -26,8 +26,10 @@ public class Login {
     public int authenticate() throws SQLException, NoSuchAlgorithmException {
 
         //pull password info from Users data base and check it
-        System.out.println(this.id);
-        result = statement.executeQuery("SELECT * FROM Users");
+
+
+        result = statement.executeQuery("SELECT * FROM Users WHERE Users.userId='" + this.id + "'");
+
         String hashedInputPass;
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -38,12 +40,15 @@ public class Login {
         for (byte b : hashInBytes) {
             sb.append(String.format("%02x", b));
         }
+        result.next();
 
         //sb is now the hashed input password, parse column results of permission as an integer and return
 
-        if (result.getString(1).equals(sb.toString())) {
+
+        if (result.getString(2).equals(sb.toString())) {
              //the password is authenticated
-             return Integer.parseInt(result.getString(2));
+
+             return Integer.parseInt(result.getString(3));
         } else {
             //the password is not authenticated
             return -1;
