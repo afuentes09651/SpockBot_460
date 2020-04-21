@@ -1,5 +1,8 @@
 package com.company;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -48,6 +51,8 @@ public class RestartDB {
                     statement.executeQuery("DROP TABLE Rank");
                     statement.executeQuery("DROP TABLE Job"); //Job is giving issues
                     statement.executeQuery("DROP TABLE Ranking");
+                    statement.executeQuery("DROP TABLE Users");
+
 
                 }catch(SQLException e){}
 
@@ -92,12 +97,50 @@ public class RestartDB {
                     "CREATE TABLE Ranking " +
                             "(cid INTEGER PRIMARY KEY, rid INTEGER)");
 
+            //Create Users table
+            statement.executeQuery(
+                    "CREATE TABLE Users " +
+                            "(id INTEGER PRIMARY KEY, user VARCHAR(25), pass VARCHAR(100), permission INTEGER)");
+
+            //insert default user info and levels, in SHA256 hash
+
+            String[] password = {"llap", "spock", "beans"};
+            String[] passwordHash = {"", "", ""};
+            for (int i = 0; i <= 2; i++) {
+                MessageDigest md = MessageDigest.getInstance("SHA-256");
+                byte[] hashInBytes = md.digest(password[i].getBytes(StandardCharsets.UTF_8));
+
+                // bytes to hex
+                StringBuilder sb = new StringBuilder();
+                for (byte b : hashInBytes) {
+                    sb.append(String.format("%02x", b));
+                }
+                passwordHash[i] = sb.toString();
+            }
+
+
+
+            /*statement.executeQuery(
+                    "INSERT INTO Users (user, pass, permission) VALUES " +
+                            "(" + "Captain" + ", " + passwordHash[0] + ", " + 0 + ")");
+            statement.executeQuery(
+                    "INSERT INTO Users (user, pass, permission) VALUES " +
+                            "(" + "Commander" + ", " + passwordHash[1] + ", " + 1 + ")");
+            statement.executeQuery(
+                    "INSERT INTO Users (user, pass, permission) VALUES " +
+                            "(" + "Ensign" + ", " + passwordHash[2] + ", " + 2 + ")");
+
+            System.out.println("WOOOOOOOOOOOO");
+
+            result = statement.executeQuery("SELECT * FROM Users");
+            System.out.println(result.getString(1));*/
+
             System.out.println("Ranking Table has been created");
 
             System.out.println("\nSchema has been generated");
 
 
-        }catch(SQLException e){
+        }catch(SQLException | NoSuchAlgorithmException e){
             System.out.println(e);
         }
     }

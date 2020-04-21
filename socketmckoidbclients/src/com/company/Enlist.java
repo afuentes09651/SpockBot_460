@@ -2,6 +2,8 @@ package com.company;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 
 public class Enlist {
 
@@ -15,8 +17,6 @@ public class Enlist {
 
 
         System.out.println("You have chosen to enlist a Crew Member! Here are the available Assignments: \n");
-
-        result = statement.executeQuery("SELECT * FROM Post");
 
         while(result.next()){
             System.out.println(result.getString(1) + "\t" + result.getString(2));

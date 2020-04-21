@@ -3,6 +3,8 @@ import com.mckoi.util.Log;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 
 public class Main {
 
@@ -61,31 +63,38 @@ public class Main {
             String pw = reader.nextLine(); //stores input for password
 
             Login login = new Login(id, pw);
-            int auth = login.authenticate();
-
-            switch(auth){
-                case 0: {
-                    System.out.println("Access Granted! Welcome Captain!");
-                    accLevel = 3;
-                    access = true;
-                    break;
+            try {
+                int auth = login.authenticate();
+                switch(auth){
+                    case 0: {
+                        System.out.println("Access Granted! Welcome Captain!");
+                        accLevel = 3;
+                        access = true;
+                        break;
+                    }
+                    case 1: {
+                        System.out.println("Access Granted! Welcome Commander!");
+                        accLevel = 2;
+                        access = true;
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("Access Granted! Welcome Ensign!");
+                        accLevel = 1;
+                        access = true;
+                        break;
+                    }
+                    default: {
+                        System.out.println("Access Denied!");
+                    }
                 }
-                case 1: {
-                    System.out.println("Access Granted! Welcome Commander!");
-                    accLevel = 2;
-                    access = true;
-                    break;
-                }
-                case 2: {
-                    System.out.println("Access Granted! Welcome Ensign!");
-                    accLevel = 1;
-                    access = true;
-                    break;
-                }
-                default: {
-                    System.out.println("Access Denied!");
-                }
+            } catch (Exception e){
+                System.out.println("An error occured in authentication, please check your credentials and try again.");
+                e.printStackTrace();
             }
+
+
+
         }
 
 
