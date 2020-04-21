@@ -86,22 +86,6 @@ public class Add {
             System.out.println("There was an issue adding the officer's rank");
         }
 
-        /*
-        //this query takes care of Job
-        try {
-            result = statement.executeQuery("INSERT INTO Job (cid, pid) VALUES " +
-                    "('" + cid + "', '" + pid  + "')"
-            );
-
-
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-
-            System.out.println("There was an issue adding the officer's job");
-        }*/
-
-
     }
 
     public static void addPost() throws SQLException {

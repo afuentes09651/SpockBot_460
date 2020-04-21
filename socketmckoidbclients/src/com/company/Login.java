@@ -54,17 +54,6 @@ public class Login {
             return -1;
         }
 
-
-        /*
-        for(int i = 0; i < ids.length; i++){
-            if(ids[i].equals(id)){
-                if(pws[i].equals(id));{
-                    return i; //we are going to use the index as a permission
-                }
-            }
-        }
-        return -1; //access denied
-    */
     }
 
 }

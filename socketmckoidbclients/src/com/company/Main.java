@@ -132,22 +132,46 @@ public class Main {
 
         switch(choice){
             case 1:
-                la.main(); //Ensign Level Access
+                if (accLevel <= 3) {
+                    la.main(); //Ensign Level Access
+                } else {
+                    System.out.println("Access denied, not proper security clearance.");
+                }
                 break;
             case 2:
-                cinfo.main(); //Ensign Level Access
+                if (accLevel <= 3) {
+                    cinfo.main(); //Ensign Level Access
+                } else {
+                        System.out.println("Access denied, not proper security clearance.");
+                    }
                 break;
             case 3:
+                if (accLevel <= 2) {
                 add.main(); //Commander Level Access
+                } else {
+                    System.out.println("Access denied, not proper security clearance.");
+                }
                 break;
             case 4:
+                if (accLevel <= 1) {
                 delete.main(); //Captain Level Access
+                } else {
+                    System.out.println("Access denied, not proper security clearance.");
+                }
                 break;
             case 5:
+                if (accLevel <= 2) {
                 enlist.main(); //Commander Level Access
+                } else {
+                    System.out.println("Access denied, not proper security clearance.");
+                }
                 break;
             case 6:
+                if (accLevel <= 1) {
                 upRank.main(); //Captain Level Access
+                } else {
+                    System.out.println("Access denied, not proper security clearance.");
+                }
                 break;
             case 7:
                 connection.close();
