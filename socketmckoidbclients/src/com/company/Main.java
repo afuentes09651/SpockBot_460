@@ -1,4 +1,6 @@
 package com.company;
+import com.mckoi.util.Log;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -15,6 +17,8 @@ public class Main {
     static Enlist enlist;
     static UpRank upRank;
     static Delete delete;
+    private static boolean access = false;
+    private static int accLevel = -1; //We will use this to keep track of the permissions of the user
 
 
     public Main() {
@@ -47,6 +51,43 @@ public class Main {
         }
 
         System.out.println("Welcome to Spockbot: USS Corsair DBMS!\n");
+
+        System.out.println("\nBefore we begin, you must sign in.");
+
+        while(!access){ //User must have permission to access the DBMS
+            System.out.print("\nEnter ID: "); //username
+            String id = reader.nextLine(); //stores input for username
+            System.out.print("\nEnter Password: ");
+            String pw = reader.nextLine(); //stores input for password
+
+            Login login = new Login(id, pw);
+            int auth = login.authenticate();
+
+            switch(auth){
+                case 0: {
+                    System.out.println("Access Granted! Welcome Captain!");
+                    accLevel = 3;
+                    access = true;
+                    break;
+                }
+                case 1: {
+                    System.out.println("Access Granted! Welcome Commander!");
+                    accLevel = 2;
+                    access = true;
+                    break;
+                }
+                case 2: {
+                    System.out.println("Access Granted! Welcome Ensign!");
+                    accLevel = 1;
+                    access = true;
+                    break;
+                }
+                default: {
+                    System.out.println("Access Denied!");
+                }
+            }
+        }
+
 
 
 
@@ -82,22 +123,22 @@ public class Main {
 
         switch(choice){
             case 1:
-                la.main();
+                la.main(); //Ensign Level Access
                 break;
             case 2:
-                cinfo.main();
+                cinfo.main(); //Ensign Level Access
                 break;
             case 3:
-                add.main();
+                add.main(); //Commander Level Access
                 break;
             case 4:
-                delete.main();
+                delete.main(); //Captain Level Access
                 break;
             case 5:
-                enlist.main();
+                enlist.main(); //Commander Level Access
                 break;
             case 6:
-                upRank.main();
+                upRank.main(); //Captain Level Access
                 break;
             case 7:
                 connection.close();
@@ -109,8 +150,4 @@ public class Main {
         }
 
     }
-
-
-
-    
 }
