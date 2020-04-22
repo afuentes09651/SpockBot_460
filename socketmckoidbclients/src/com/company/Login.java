@@ -9,12 +9,7 @@ import java.util.Scanner;
 public class Login {
 
     static ResultSet result = Main.result;
-    static Scanner reader = Main.reader;
     static Statement statement = Main.statement;
-    static Connection connection;
-
-    private String [] ids = {"Captain", "Commander", "Ensign"}; //just some users. The names indicate rank for easr
-    private String [] pws = {"llap","spock","beans"}; //passwords correspond to the indexes of ids
     private String id;
     private String pw;
 
@@ -29,8 +24,6 @@ public class Login {
 
 
         result = statement.executeQuery("SELECT * FROM Users WHERE Users.userId='" + this.id + "'");
-
-        String hashedInputPass;
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] hashInBytes = md.digest(this.pw.getBytes(StandardCharsets.UTF_8));
